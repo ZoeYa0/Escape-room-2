@@ -1,23 +1,19 @@
 extends Control
 
-@onready var showhint52 = $showhint52
-@onready var hint52 = $hint52
-
 var codes := ["0312"]
+var start_time = 0
 
 func _ready():
-	
-	TimeTracker.start_scene("room52")
+	Events.current_room = 5
+	start_time = Time.get_ticks_msec()
+	#FORCING pointing hand
+	for node in get_tree().get_nodes_in_group("Buttons"):
+		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
-	
-	var dialogue_label = $dialoguelabel52  # Let op: gebruik $ i.p.v. %
 
 	var dialogue_res = preload("res://dialogue/dialogueroom52.dialogue")
-	DialogueManager.show_dialogue_balloon(dialogue_res, "startdialoguefivetwo")
+	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 
-	# Alles standaard verbergen
-	$hint52.visible = false
-	$hidehint52.visible = false
 
 	$informatie52.visible = false
 	$hideinformatie52.visible = false
@@ -25,27 +21,12 @@ func _ready():
 	# LineEdit standaard zichtbaar
 	$antwoord52.visible = true
 
-	# Knoppen koppelen aan functies
-	$showhint52.pressed.connect(_on_show_hint_52)
-	$hidehint52.pressed.connect(_on_hide_hint_52)
-
 	$showinformatie52.pressed.connect(_on_show_informatie_52)
 	$hideinformatie52.pressed.connect(_on_hide_informatie_52)
 	
-func _process(delta):
-	TimeTracker.update_elapsed()
-	$TimerLabel.text = "Tijd: %.2f sec" % TimeTracker.current_elapsed
+func _process(_delta):
+	Events.rooms["room5"]["time"] += (Time.get_ticks_msec() - start_time) / 1000.0
 
-
-# --- Hint 52 functionaliteit ---
-func _on_show_hint_52():
-	Events.use_hint("room52")
-	$hint52.visible = true
-	$hidehint52.visible = true
-
-func _on_hide_hint_52():
-	$hint52.visible = false
-	$hidehint52.visible = false
 
 
 # --- Informatie 52 functionaliteit ---

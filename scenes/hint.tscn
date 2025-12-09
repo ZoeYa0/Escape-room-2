@@ -29,3 +29,5 @@ text = "Hint"
 [node name="ActualHint" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[connection signal="pressed" from="HideHint" to="." method="_on_hide_hint_pressed"]

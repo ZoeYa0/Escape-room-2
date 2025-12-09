@@ -1,44 +1,23 @@
 extends Control
 
-@onready var showhint51 = $showhint51
-@onready var hint51 = $hint51
 
+var start_time = 0
 func _ready():
-	
-	TimeTracker.start_scene("room51")
-
+	Events.current_room = 5
+	start_time = Time.get_ticks_msec()
+	#FORCING pointing hand
+	for node in get_tree().get_nodes_in_group("Buttons"):
+		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	
 	var dialogue_res = preload("res://dialogue/dialogueroom51.dialogue")
-	DialogueManager.show_dialogue_balloon(dialogue_res, "startdialoguefiveone")
-
-	# Alles standaard onzichtbaar
-	$hint51.visible = false
-	$hidehint51.visible = false
+	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 
 	$informatie51.visible = false
 	$hideinformatie51.visible = false
-
-	# Buttons koppelen
-	$showhint51.pressed.connect(_on_show_hint_51)
-	$hidehint51.pressed.connect(_on_hide_hint_51)
-
-	$showinformatie51.pressed.connect(_on_show_informatie_51)
-	$hideinformatie51.pressed.connect(_on_hide_informatie_51)
 	
 func _process(delta):
-	TimeTracker.update_elapsed()
-	$TimerLabel.text = "Tijd: %.2f sec" % TimeTracker.current_elapsed
+	Events.rooms["room5"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
 
-
-# --- Hint 51 ---
-func _on_show_hint_51():
-	Events.use_hint("room51")
-	$hint51.visible = true
-	$hidehint51.visible = true
-
-func _on_hide_hint_51():
-	$hint51.visible = false
-	$hidehint51.visible = false
 
 
 # --- Informatie 51 ---

@@ -1,9 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://cbjouylrbq1s8"]
+[gd_scene load_steps=19 format=3 uid="uid://cbjouylrbq1s8"]
 
 [ext_resource type="Script" uid="uid://tfsfn33tq7a1" path="res://scripts/room3.gd" id="1_4aq8u"]
 [ext_resource type="Texture2D" uid="uid://c2i5iyjbht7sw" path="res://assets/achtergrond3.png" id="1_j3vgb"]
-[ext_resource type="Texture2D" uid="uid://b8u5kkp7v8x1q" path="res://assets/q10uitleg.png" id="4_op2f5"]
-[ext_resource type="Texture2D" uid="uid://bs75gsc1ifbxg" path="res://assets/hint3.png" id="5_17neo"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="6_ggopl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3r3bf"]
@@ -42,16 +40,16 @@ anchors_preset = 0
 script = ExtResource("1_4aq8u")
 
 [node name="achtergrond3" type="Sprite2D" parent="."]
-position = Vector2(574.375, 313.25)
-scale = Vector2(1.5234479, 1.1927817)
+position = Vector2(579, 290)
+scale = Vector2(1.5234479, 1.2702464)
 texture = ExtResource("1_j3vgb")
 
 [node name="showq10" type="Button" parent="."]
 layout_mode = 0
-offset_left = 259.0
-offset_top = 86.0
-offset_right = 466.0
-offset_bottom = 222.0
+offset_left = 262.0
+offset_top = 36.0
+offset_right = 469.0
+offset_bottom = 172.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3r3bf")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_op2f5")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_17neo")
@@ -59,31 +57,18 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_ggopl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4x0d7")
 
 [node name="hideq10" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 1012.0
 offset_top = 90.0
 offset_right = 1092.0
 offset_bottom = 158.0
 
-[node name="q10" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(583.00006, 223.375)
-scale = Vector2(0.84337825, 0.8505362)
-texture = ExtResource("4_op2f5")
-
-[node name="hint3" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(581.375, 224.00002)
-scale = Vector2(0.8402612, 0.8494624)
-texture = ExtResource("5_17neo")
-
 [node name="ShowHint" type="Button" parent="."]
 layout_mode = 0
-offset_left = 248.0
-offset_top = 260.0
-offset_right = 451.0
-offset_bottom = 311.0
+offset_left = 251.0
+offset_top = 240.0
+offset_right = 454.0
+offset_bottom = 291.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bcdn3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_kk34u")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_iompt")
@@ -99,10 +84,10 @@ offset_bottom = 327.0
 
 [node name="showantwoordinvullen" type="Button" parent="."]
 layout_mode = 0
-offset_left = 694.0
-offset_top = 420.0
-offset_right = 832.0
-offset_bottom = 468.0
+offset_left = 703.0
+offset_top = 401.0
+offset_right = 841.0
+offset_bottom = 449.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_8wius")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_dgrhu")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_o7801")
@@ -116,7 +101,9 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Hint" parent="." instance=ExtResource("6_ggopl")]
-position = Vector2(1008, 94)
+visible = false
+position = Vector2(4, -3)
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
+[connection signal="text_submitted" from="antwoordinvullen" to="." method="_on_antwoordinvullen_text_submitted"]
 [connection signal="pressed" from="showantwoordinvullen" to="." method="_on_showantwoordinvullen_pressed"]

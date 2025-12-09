@@ -54,14 +54,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_ishgb")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_v8yog")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lwrfx")
 
-[node name="hidehint51" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 967.0
-offset_top = 46.0
-offset_right = 1030.0
-offset_bottom = 100.0
-
 [node name="informatie51" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(576.25, 320.75)
@@ -104,7 +96,6 @@ offset_bottom = 23.0
 [node name="Hint" parent="." instance=ExtResource("5_ishgb")]
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
-[connection signal="pressed" from="hidehint51" to="." method="_on_hidehint_51_pressed"]
 [connection signal="pressed" from="hideinformatie51" to="." method="_on_hideinformatie_51_pressed"]
 [connection signal="pressed" from="showinformatie51" to="." method="_on_showinformatie_51_pressed"]
 [connection signal="text_submitted" from="antwoord51" to="." method="_on_antwoord_51_text_submitted"]

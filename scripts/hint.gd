@@ -15,8 +15,6 @@ func _on_show_hint_pressed() -> void:
 					actual_hint.text = tr("HINTS_1.1")
 				2:
 					actual_hint.text = tr("HINTS_1.2")
-				3:
-					actual_hint.text = tr("HINTS_1.3")
 		2:
 			Events.rooms["room2"]["hints"] += 1
 			match Events.rooms["room2"]["hints"]:
@@ -42,13 +40,9 @@ func _on_show_hint_pressed() -> void:
 					actual_hint.text = tr("HINTS_4.1")
 				2:
 					actual_hint.text = tr("HINTS_4.2")
-				3:
-					actual_hint.text = tr("HINTS_4.3")
 		5:
 			Events.rooms["room5"]["hints"] += 1
-			match Events.current_stickynote:
-				null:
-					actual_hint.text = tr("HINTS_5.0")
+			match Events.rooms["room5"]["hints"]:
 				1:
 					actual_hint.text = tr("HINTS_5.1")
 				2:
@@ -57,4 +51,12 @@ func _on_show_hint_pressed() -> void:
 					actual_hint.text = tr("HINTS_5.3")
 				4:
 					actual_hint.text = tr("HINTS_5.4")
+				5:
+					actual_hint.text = tr("HINTS_5.5")
+				6:
+					actual_hint.text = tr("HINTS_5.6")
 					
+
+
+func _on_hide_hint_pressed() -> void:
+	visible = false

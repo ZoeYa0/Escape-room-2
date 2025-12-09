@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bt63nsssi3pfm"
+
+[deps]
+
+files=["res://localization/escape room 2 - Sheet1.nl.translation"]
+
+source_file="res://localization/escape room 2 - Sheet1.csv"
+dest_files=["res://localization/escape room 2 - Sheet1.nl.translation"]
+
+[params]
+
+compress=true
+delimiter=0

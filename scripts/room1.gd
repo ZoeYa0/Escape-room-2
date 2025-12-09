@@ -16,17 +16,17 @@ extends Node2D
 @onready var line_edit: LineEdit = $Answer/LineEdit
 @onready var label: Label = $Answer/Label
 
+var start_time = 0
+var dialogue_res = preload("res://dialogue/dialogueroom1.dialogue")
 
 func _ready():
+	Events.current_room = 1
+	start_time = Time.get_ticks_msec()
 	#FORCING pointing hand
 	for node in get_tree().get_nodes_in_group("Buttons"):
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-		
-	TimeTracker.start_scene("room1")
 
-	
-	@warning_ignore("unused_variable")
-	var dialogue_res = preload("res://dialogue/dialogueroom1.dialogue")
+
 	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 
 	# --- Startstatus ---
@@ -46,13 +46,13 @@ func _ready():
 	
 	
 func _process(_delta):
-	TimeTracker.update_elapsed()
-	$TimerLabel.text = "Tijd: %.2f sec" % TimeTracker.current_elapsed
+	Events.rooms["room1"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
+
 
 
 # --- HINT BUTTONS ---
 func _on_showhint_1_pressed() -> void:
-	Events.rooms["room1"]["hints"] += 1
+	hint.visible = true
 	
 
 func _on_hidehint_1_pressed() -> void:

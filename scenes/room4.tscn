@@ -174,7 +174,6 @@ scale = Vector2(0.70142436, 0.65396345)
 texture = ExtResource("4_uv3hv")
 
 [node name="hidevraag4" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 980.0
 offset_top = 53.0
@@ -192,14 +191,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_eqdj1")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_2rspr")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_y5pfl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_q6beh")
-
-[node name="hidehint4" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 981.0
-offset_top = 55.0
-offset_right = 1052.0
-offset_bottom = 119.0
 
 [node name="getal1" type="Button" parent="."]
 layout_mode = 0
@@ -357,7 +348,6 @@ visible = false
 [connection signal="pressed" from="showvraag4" to="." method="_on_showvraag_4_pressed"]
 [connection signal="pressed" from="hidevraag4" to="." method="_on_hidevraag_4_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
-[connection signal="pressed" from="hidehint4" to="." method="_on_hidehint_4_pressed"]
 [connection signal="pressed" from="getal1" to="." method="_on_getal_1_pressed"]
 [connection signal="pressed" from="getal2" to="." method="_on_getal_2_pressed"]
 [connection signal="pressed" from="getal3" to="." method="_on_getal_3_pressed"]

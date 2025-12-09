@@ -51,14 +51,14 @@ position = Vector2(574.5, 326)
 scale = Vector2(2.7210405, 2.3695652)
 texture = ExtResource("2_54ujy")
 
-[node name="showhint1" type="Button" parent="." groups=["Buttons"]]
+[node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 73.0
-offset_top = 340.0
-offset_right = 74.16309
-offset_bottom = 341.6982
+offset_left = 62.000008
+offset_top = 310.0
+offset_right = 63.969994
+offset_bottom = 311.6982
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(137.5644, -46.519108)
@@ -135,7 +135,7 @@ offset_bottom = 298.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Geef je antwoord in mg/m^3 en rond af op 2 decimalen"
 
-[connection signal="pressed" from="showhint1" to="." method="_on_showhint_1_pressed"]
+[connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="antwoord" to="." method="_on_antwoord_pressed"]
 [connection signal="pressed" from="ShowOpdracht" to="." method="_on_show_opdracht_pressed"]
 [connection signal="pressed" from="Opdracht/HideOpdracht" to="." method="_on_hide_opdracht_pressed"]
