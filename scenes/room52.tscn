@@ -1,0 +1,123 @@
+[gd_scene load_steps=17 format=3 uid="uid://bg3kf6nthm41k"]
+
+[ext_resource type="Script" uid="uid://doqdavwhcxinc" path="res://scripts/room52.gd" id="1_1hm3t"]
+[ext_resource type="Texture2D" uid="uid://c5x2ucj25oxn1" path="res://assets/achtergrond52.png" id="1_rqp4b"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_pntt1"]
+[ext_resource type="Texture2D" uid="uid://bwu0elnh23w01" path="res://assets/hint52.png" id="4_ex7pw"]
+[ext_resource type="Texture2D" uid="uid://blep7knj4hbth" path="res://assets/vraag52.png" id="5_rysxi"]
+[ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="6_fo6w4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fo6w4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1fqe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy6rw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yrp0j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhsca"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rysxi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s54pp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ds3x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uodtl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xl1xu"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1hm3t")
+
+[node name="achtergrond52" type="Sprite2D" parent="."]
+position = Vector2(577, 321)
+scale = Vector2(1.20964, 1.1963)
+texture = ExtResource("1_rqp4b")
+
+[node name="dialoguelabel52" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 33.0
+offset_right = 65.0
+offset_bottom = 73.0
+script = ExtResource("2_pntt1")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+metadata/_custom_type_script = "uid://g32um0mltv5d"
+
+[node name="ShowHint" type="Button" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 177.0
+offset_right = 212.0
+offset_bottom = 256.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fo6w4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j1fqe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dy6rw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yrp0j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dhsca")
+
+[node name="hidehint52" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 994.0
+offset_top = 41.0
+offset_right = 1055.0
+offset_bottom = 93.0
+
+[node name="showinformatie52" type="Button" parent="."]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 179.0
+offset_right = 1103.0
+offset_bottom = 257.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rysxi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s54pp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8ds3x")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_uodtl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xl1xu")
+
+[node name="hideinformatie52" type="Button" parent="."]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 1055.0
+offset_top = 17.0
+offset_right = 1136.0
+offset_bottom = 87.0
+
+[node name="hint52" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(597, 93)
+scale = Vector2(0.794605, 0.77)
+texture = ExtResource("4_ex7pw")
+
+[node name="informatie52" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(577, 321.5)
+scale = Vector2(1.20251, 1.19593)
+texture = ExtResource("5_rysxi")
+
+[node name="antwoord52" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 498.0
+offset_right = 722.0
+offset_bottom = 547.0
+
+[node name="TimerLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Hint" parent="." instance=ExtResource("6_fo6w4")]
+
+[connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
+[connection signal="pressed" from="hidehint52" to="." method="_on_hidehint_52_pressed"]
+[connection signal="pressed" from="showinformatie52" to="." method="_on_showinformatie_52_pressed"]
+[connection signal="pressed" from="hideinformatie52" to="." method="_on_hideinformatie_52_pressed"]
+[connection signal="text_submitted" from="antwoord52" to="." method="_on_antwoord_52_text_submitted"]

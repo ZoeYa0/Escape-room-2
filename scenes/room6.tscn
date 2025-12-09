@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://ol4746xbjja4"]
+
+[ext_resource type="Texture2D" uid="uid://cb2ndqbsriv7a" path="res://assets/achtergrond6.png" id="1_5duye"]
+[ext_resource type="Script" uid="uid://byremsrip5wtw" path="res://scripts/room6.gd" id="1_qv633"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qv633")
+
+[node name="achtergrond6" type="Sprite2D" parent="."]
+position = Vector2(576.75, 324.25)
+scale = Vector2(1.0335721, 1.0198098)
+texture = ExtResource("1_5duye")
+
+[node name="tijd1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 276.0
+offset_right = 280.0
+offset_bottom = 299.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="tijd2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 277.0
+offset_right = 640.0
+offset_bottom = 300.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="tijd3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 275.0
+offset_right = 1008.0
+offset_bottom = 298.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="tijd4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 557.0
+offset_right = 462.0
+offset_bottom = 580.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="tijd5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 623.0
+offset_top = 558.0
+offset_right = 927.0
+offset_bottom = 587.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="hint1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 308.0
+offset_right = 286.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="hint2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 313.0
+offset_right = 730.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="hint3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 793.0
+offset_top = 308.0
+offset_right = 1129.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="hint4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 593.0
+offset_right = 548.0
+offset_bottom = 616.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="hint5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 613.0
+offset_top = 589.0
+offset_right = 933.0
+offset_bottom = 612.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)

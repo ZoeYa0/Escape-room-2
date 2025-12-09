@@ -1,0 +1,372 @@
+[gd_scene load_steps=75 format=3 uid="uid://1sp7px3uiyoa"]
+
+[ext_resource type="Script" uid="uid://cpjed285bcogt" path="res://scripts/room4.gd" id="1_3j86r"]
+[ext_resource type="Texture2D" uid="uid://bph3aum82om02" path="res://assets/achtergrond4.png" id="1_xadx6"]
+[ext_resource type="Texture2D" uid="uid://wfwh20tur51o" path="res://assets/vraag4.png" id="4_uv3hv"]
+[ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="4_uwnbk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uxnh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1oq63"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxuxh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5idlq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mfne7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uv3hv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqdj1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rspr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5pfl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6beh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgl1u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cikox"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cl5w0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhxj8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ok7q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7v453"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcwnq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m1o1n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fumeg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mm2yy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_827il"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2nla"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7xsw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m7svv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lp7lu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgqwv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sy2f7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvftd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g25pi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bahe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8q2cu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tw01b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0k1w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23sr7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yt0u6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1u7op"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_122t7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vt5ml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olbua"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rnllb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0lujm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnwd7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qbgks"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ri40c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68upo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ibnod"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lj566"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xonw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2skeo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jd5vj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e74q6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tqmsx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cvkcl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyix3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3801s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h65md"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_npmm8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hx0j0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8efd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_630wk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7osjm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7jon"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mby0p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8tmt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1c8vx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5ern"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4lfmn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0qgqb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w40pj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2a54"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3j86r")
+
+[node name="achtergrond4" type="Sprite2D" parent="."]
+position = Vector2(576.75, 322.5)
+scale = Vector2(1.6535151, 1.3841202)
+texture = ExtResource("1_xadx6")
+
+[node name="showvraag4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 48.0
+offset_right = 699.0
+offset_bottom = 147.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7uxnh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1oq63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rxuxh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5idlq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mfne7")
+
+[node name="vraag4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(593, 138)
+scale = Vector2(0.70142436, 0.65396345)
+texture = ExtResource("4_uv3hv")
+
+[node name="hidevraag4" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 980.0
+offset_top = 53.0
+offset_right = 1050.0
+offset_bottom = 111.0
+
+[node name="ShowHint" type="Button" parent="."]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 143.0
+offset_right = 888.0
+offset_bottom = 245.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uv3hv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eqdj1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2rspr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y5pfl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q6beh")
+
+[node name="hidehint4" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 981.0
+offset_top = 55.0
+offset_right = 1052.0
+offset_bottom = 119.0
+
+[node name="getal1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 424.0
+offset_right = 521.0
+offset_bottom = 466.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rgl1u")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cikox")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cl5w0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dhxj8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1ok7q")
+
+[node name="getal2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 695.0
+offset_top = 425.0
+offset_right = 763.0
+offset_bottom = 469.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7v453")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xcwnq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_m1o1n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fumeg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mm2yy")
+
+[node name="getal3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 454.0
+offset_right = 420.0
+offset_bottom = 501.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_827il")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_m2nla")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u7xsw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m7svv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lp7lu")
+
+[node name="getal4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 457.0
+offset_right = 629.0
+offset_bottom = 502.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fgqwv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sy2f7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dvftd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g25pi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1bahe")
+
+[node name="getal5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 618.0
+offset_top = 457.0
+offset_right = 740.0
+offset_bottom = 502.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8q2cu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tw01b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u0k1w")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_23sr7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yt0u6")
+
+[node name="getal6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 455.0
+offset_right = 807.0
+offset_bottom = 502.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1u7op")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_122t7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vt5ml")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_olbua")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rnllb")
+
+[node name="getal7" type="Button" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 498.0
+offset_right = 497.0
+offset_bottom = 547.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0lujm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fnwd7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qbgks")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ri40c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_68upo")
+
+[node name="getal8" type="Button" parent="."]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 499.0
+offset_right = 770.0
+offset_bottom = 550.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ibnod")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lj566")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6xonw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2skeo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jd5vj")
+
+[node name="getal9" type="Button" parent="."]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 539.0
+offset_right = 656.0
+offset_bottom = 598.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e74q6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tqmsx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cvkcl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_iyix3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3801s")
+
+[node name="getal10" type="Button" parent="."]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 533.0
+offset_right = 927.0
+offset_bottom = 600.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h65md")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_npmm8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hx0j0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_r8efd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_630wk")
+
+[node name="getal11" type="Button" parent="."]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 600.0
+offset_right = 459.0
+offset_bottom = 649.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7osjm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w7jon")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mby0p")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g8tmt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1c8vx")
+
+[node name="getal12" type="Button" parent="."]
+layout_mode = 0
+offset_left = 834.0
+offset_top = 595.0
+offset_right = 994.0
+offset_bottom = 660.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h5ern")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4lfmn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0qgqb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w40pj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j2a54")
+
+[node name="TimerLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Hint" parent="." instance=ExtResource("4_uwnbk")]
+visible = false
+
+[connection signal="pressed" from="showvraag4" to="." method="_on_showvraag_4_pressed"]
+[connection signal="pressed" from="hidevraag4" to="." method="_on_hidevraag_4_pressed"]
+[connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
+[connection signal="pressed" from="hidehint4" to="." method="_on_hidehint_4_pressed"]
+[connection signal="pressed" from="getal1" to="." method="_on_getal_1_pressed"]
+[connection signal="pressed" from="getal2" to="." method="_on_getal_2_pressed"]
+[connection signal="pressed" from="getal3" to="." method="_on_getal_3_pressed"]
+[connection signal="pressed" from="getal4" to="." method="_on_getal_4_pressed"]
+[connection signal="pressed" from="getal5" to="." method="_on_getal_5_pressed"]
+[connection signal="pressed" from="getal6" to="." method="_on_getal_6_pressed"]
+[connection signal="pressed" from="getal7" to="." method="_on_getal_7_pressed"]
+[connection signal="pressed" from="getal8" to="." method="_on_getal_8_pressed"]
+[connection signal="pressed" from="getal9" to="." method="_on_getal_9_pressed"]
+[connection signal="pressed" from="getal10" to="." method="_on_getal_10_pressed"]
+[connection signal="pressed" from="getal11" to="." method="_on_getal_11_pressed"]
+[connection signal="pressed" from="getal12" to="." method="_on_getal_12_pressed"]

@@ -1,0 +1,166 @@
+[gd_scene load_steps=27 format=3 uid="uid://booswlxv4ps2"]
+
+[ext_resource type="Script" uid="uid://b7jwjbapbm45d" path="res://scripts/room22.gd" id="1_28isl"]
+[ext_resource type="Texture2D" uid="uid://odiokettbdnf" path="res://assets/achtergrond22.png" id="2_tmq5l"]
+[ext_resource type="Texture2D" uid="uid://begnni5j7pwli" path="res://assets/hint22.png" id="3_qqbum"]
+[ext_resource type="Texture2D" uid="uid://cmtstr767eu73" path="res://assets/lampenverbonden.png" id="4_4ypfm"]
+[ext_resource type="Texture2D" uid="uid://0rq4qsp1vsil" path="res://assets/schakelaargesloten.png" id="5_8aym2"]
+[ext_resource type="Texture2D" uid="uid://d4gg2yjkfe70b" path="res://assets/grijs.png" id="6_flbad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ypfm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8i8c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8aym2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flbad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t107r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqc0p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ecxbw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m1eyy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r0vo6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr7gl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3db5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o21em"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjr6i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qdrfo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yrf26"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xvvm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0072e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oeimy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcqru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g1e18"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_28isl")
+
+[node name="achtergrond22" type="Sprite2D" parent="."]
+position = Vector2(577, 319.25)
+scale = Vector2(1.0303571, 1.0134706)
+texture = ExtResource("2_tmq5l")
+
+[node name="showhint22" type="Button" parent="."]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 84.0
+offset_right = 286.0
+offset_bottom = 186.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4ypfm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y8i8c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8aym2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_flbad")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t107r")
+
+[node name="hint22" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(288, 138)
+texture = ExtResource("3_qqbum")
+
+[node name="hidehint22" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 463.0
+offset_top = 69.0
+offset_right = 508.0
+offset_bottom = 109.0
+
+[node name="lampenverbonden" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(784.5, 283.25)
+scale = Vector2(1.034632, 1.02)
+texture = ExtResource("4_4ypfm")
+
+[node name="lampenverbinden" type="Button" parent="."]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 232.0
+offset_right = 983.0
+offset_bottom = 332.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jqc0p")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ecxbw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_m1eyy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_r0vo6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hr7gl")
+
+[node name="schakelaargesloten" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(439, 373)
+texture = ExtResource("5_8aym2")
+
+[node name="grijs" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(401, 375)
+texture = ExtResource("6_flbad")
+
+[node name="schakelaarsluiten" type="Button" parent="."]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 301.0
+offset_right = 474.0
+offset_bottom = 461.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3db5s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_o21em")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qjr6i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qdrfo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yrf26")
+
+[node name="volt" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 772.0
+offset_top = 72.0
+offset_right = 817.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "V"
+
+[node name="ampere" type="Label" parent="."]
+layout_mode = 0
+offset_left = 772.0
+offset_top = 69.0
+offset_right = 847.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "A"
+
+[node name="atov" type="Button" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 62.0
+offset_right = 835.0
+offset_bottom = 148.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4xvvm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0072e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oeimy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rcqru")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g1e18")
+
+[node name="TimerLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="lampenverbinden" to="." method="_on_lampenverbinden_pressed"]
+[connection signal="pressed" from="schakelaarsluiten" to="." method="_on_schakelaarsluiten_pressed"]
+[connection signal="pressed" from="atov" to="." method="_on_atov_pressed"]

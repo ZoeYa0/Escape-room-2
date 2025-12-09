@@ -1,0 +1,110 @@
+[gd_scene load_steps=16 format=3 uid="uid://cu365x7u0grxb"]
+
+[ext_resource type="Texture2D" uid="uid://bquqgsei7vgig" path="res://assets/achtergrond51.png" id="1_eihe4"]
+[ext_resource type="Script" uid="uid://lkqlsrfw5ees" path="res://scripts/room51.gd" id="1_sf8l2"]
+[ext_resource type="Texture2D" uid="uid://5f2tiq5hkk51" path="res://assets/hint51.png" id="3_8afcl"]
+[ext_resource type="Texture2D" uid="uid://c0kq8cuvie6rj" path="res://assets/vraag51.png" id="5_7x3v8"]
+[ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="5_ishgb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ughih"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7x3v8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ishgb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8yog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwrfx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_moh3v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23o8h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c323b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pd3rn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlcbn"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sf8l2")
+
+[node name="achtergrond51" type="Sprite2D" parent="."]
+position = Vector2(574.12506, 323)
+scale = Vector2(1.2076802, 1.2)
+texture = ExtResource("1_eihe4")
+
+[node name="hint51" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(573, 96.000015)
+scale = Vector2(0.7915254, 0.81609195)
+texture = ExtResource("3_8afcl")
+
+[node name="ShowHint" type="Button" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 181.0
+offset_right = 214.0
+offset_bottom = 262.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ughih")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7x3v8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ishgb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v8yog")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lwrfx")
+
+[node name="hidehint51" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 967.0
+offset_top = 46.0
+offset_right = 1030.0
+offset_bottom = 100.0
+
+[node name="informatie51" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576.25, 320.75)
+scale = Vector2(1.1961498, 1.1876155)
+texture = ExtResource("5_7x3v8")
+
+[node name="hideinformatie51" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1054.0
+offset_top = 18.0
+offset_right = 1132.0
+offset_bottom = 88.0
+
+[node name="showinformatie51" type="Button" parent="."]
+layout_mode = 0
+offset_left = 882.0
+offset_top = 180.0
+offset_right = 1106.0
+offset_bottom = 261.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_moh3v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_23o8h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c323b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pd3rn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qlcbn")
+
+[node name="antwoord51" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 530.0
+offset_right = 695.0
+offset_bottom = 573.0
+
+[node name="TimerLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Hint" parent="." instance=ExtResource("5_ishgb")]
+
+[connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
+[connection signal="pressed" from="hidehint51" to="." method="_on_hidehint_51_pressed"]
+[connection signal="pressed" from="hideinformatie51" to="." method="_on_hideinformatie_51_pressed"]
+[connection signal="pressed" from="showinformatie51" to="." method="_on_showinformatie_51_pressed"]
+[connection signal="text_submitted" from="antwoord51" to="." method="_on_antwoord_51_text_submitted"]
