@@ -63,7 +63,3 @@ func _change_to_next_scene():
 	print("Alle getallen aangeklikt → Naar volgende scene.")
 	TimeTracker.end_scene()
 	get_tree().change_scene_to_file("res://scenes/room51.tscn")
-
-
-func _on_getal_1_pressed() -> void:
-	pass # Replace with function body.

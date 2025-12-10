@@ -1,10 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://7ivaxx0cbx40"]
+[gd_scene load_steps=24 format=3 uid="uid://7ivaxx0cbx40"]
 
 [ext_resource type="Script" uid="uid://whw2je2lx36x" path="res://scripts/room2.gd" id="1_d3uvb"]
 [ext_resource type="Texture2D" uid="uid://dk3cnf7ar3htb" path="res://images/achtergrond2.png" id="1_klc7l"]
 [ext_resource type="Texture2D" uid="uid://didhv6djdccc6" path="res://images/2_dead.png" id="3_duage"]
 [ext_resource type="Texture2D" uid="uid://b3ynv2s4svs02" path="res://images/2_alive.png" id="4_ucjjd"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="4_yfplu"]
+[ext_resource type="Texture2D" uid="uid://1r3jlcdp0obq" path="res://images/2_system.png" id="6_duage"]
+[ext_resource type="Script" uid="uid://ccaw4syvwigr4" path="res://scripts/puzzle_controller.gd" id="7_7xh3p"]
+[ext_resource type="Script" uid="uid://rqp2u4q2gia5" path="res://scripts/system_parts.gd" id="8_2robf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yfplu"]
 
@@ -26,6 +29,21 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wf3f"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oibp2"]
+bg_color = Color(1.347661e-06, 0.7260562, 0.17855048, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwrhy"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_yfplu"]
+Panel/styles/panel = SubResource("StyleBoxFlat_qwrhy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucjjd"]
+bg_color = Color(0.9701547, 0.812877, 0.9012742, 1)
+
+[sub_resource type="Theme" id="Theme_duage"]
+Panel/styles/panel = SubResource("StyleBoxFlat_ucjjd")
+
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -38,12 +56,12 @@ scale = Vector2(0.5953125, 0.563368)
 texture = ExtResource("1_klc7l")
 
 [node name="2Dead" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(571, 324)
 scale = Vector2(0.569, 0.5466667)
 texture = ExtResource("3_duage")
 
 [node name="2Alive" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(587, 370)
 scale = Vector2(0.5989583, 0.5642361)
 texture = ExtResource("4_ucjjd")
@@ -60,42 +78,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_ucjjd")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_7xh3p")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2robf")
 
-[node name="Opdracht" type="Node2D" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Opdracht"]
-offset_left = 27.0
-offset_top = 27.0
-offset_right = 1097.0
-offset_bottom = 620.0
-color = Color(0.37413925, 0.37413928, 0.37413922, 1)
-
-[node name="LineEdit" type="LineEdit" parent="Opdracht"]
-offset_left = 366.0
-offset_top = 495.0
-offset_right = 671.0
-offset_bottom = 538.0
-
-[node name="Label" type="Label" parent="Opdracht"]
-offset_left = 96.0
-offset_top = 90.0
-offset_right = 994.0
-offset_bottom = 373.0
-text = "Oké, luister goed. De gasten van de Bloedtak liggen nu nog te slapen in die kamer… maar niemand weet hoelang het slaapmiddel blijft werken. Dus jullie moeten meteen een alarm in elkaar zetten zodat we het merken zodra er iemand begint te bewegen. Schiet op — voordat ze wakker worden. 
-
-De lucht drukt op de sensor, en jullie moeten de juiste druk berekenen zodat de sensor gedrukt wordt.
-
-
-De kamer is een vierkant(5/5/5m). De sensor is (1/1/5m) 
-
-De dichtheid van de lucht is 1,293 kg/m^3 
-
-Functieformule: y= 0,2 * x + 0,5 
-
-
-
-Voer antwoord in: "
-autowrap_mode = 2
-
 [node name="ShowOpdracht" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 896.0
@@ -111,6 +93,187 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_5wf3f")
 [node name="Hint" parent="." instance=ExtResource("4_yfplu")]
 visible = false
 
+[node name="Alarm" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 446.0
+offset_top = 76.0
+offset_right = 701.0
+offset_bottom = 216.0
+
+[node name="AnswerField" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 588.0
+offset_right = 776.5625
+offset_bottom = 638.0
+theme_override_styles/read_only = SubResource("StyleBoxFlat_oibp2")
+
+[node name="System" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 16.0
+offset_right = 1105.0
+offset_bottom = 628.0
+size_flags_vertical = 4
+theme = SubResource("Theme_yfplu")
+
+[node name="InnerBox" type="Panel" parent="System"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 17.0
+offset_top = 11.0
+offset_right = 1031.0
+offset_bottom = 602.0
+grow_horizontal = 2
+theme = SubResource("Theme_duage")
+
+[node name="Description" type="Label" parent="System/InnerBox"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 45.0
+offset_right = 290.0
+offset_bottom = 569.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = " Jullie moeten de juiste draden verbinden zodat het systeembord sterke en irritante geluid geeft zodra de aan-knop wordt ingedrukt én de juiste spanning wordt doorgestuurd. 
+We zijn vandaag heel lief, dus één hint krijgen jullie alvast: er worden maar 4 draden gebruikt. 
+
+De rest moeten jullie zelf uitvogelen… "
+autowrap_mode = 2
+
+[node name="2System" type="Sprite2D" parent="System/InnerBox"]
+position = Vector2(652, 287)
+scale = Vector2(0.7612967, 0.7612967)
+texture = ExtResource("6_duage")
+
+[node name="HideSystem" type="Button" parent="System" groups=["Buttons"]]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 30.0
+offset_right = 1012.0
+offset_bottom = 80.0
+text = "x"
+
+[node name="Opdracht2" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 55.0
+offset_top = 16.0
+offset_right = 1105.0
+offset_bottom = 628.0
+size_flags_vertical = 4
+theme = SubResource("Theme_yfplu")
+
+[node name="InnerBox" type="Panel" parent="Opdracht2"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 17.0
+offset_top = 11.0
+offset_right = 1031.0
+offset_bottom = 602.0
+grow_horizontal = 2
+theme = SubResource("Theme_duage")
+
+[node name="Description" type="Label" parent="Opdracht2/InnerBox"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 85.0
+offset_right = 959.0
+offset_bottom = 558.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Het lijkt misschien alsof er geen kracht op de sensor staat wanneer niemand hem aanraakt. Maar vergis je niet: zelfs lucht heeft massa. En juist die massa hebben jullie nodig om te berekenen welke spanning het systeembord moet krijgen. Zodra jullie de massa hebben berekend die op de sensor drukt, moeten jullie de functieformule gebruiken om verder te komen. Alleen dan kunnen jullie de juiste spanning bepalen… en het alarm activeren. 
+Succes!
+
+De kamer is een vierkant(5/5/5m). De sensor is (1/1/5m) 
+De dichtheid van de lucht is 1,293 kg/m^3 
+Functieformule: y= 0,2 * x + 0,5 
+-Y = de juiste spanning 
+-X = de berekende massa      
+
+Voer je antwoord in V:"
+autowrap_mode = 2
+
+[node name="Title" type="Label" parent="Opdracht2/InnerBox"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 29.0
+offset_right = 552.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 24
+text = "Opdracht"
+
+[node name="HideOpdracht" type="Button" parent="Opdracht2" groups=["Buttons"]]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 30.0
+offset_right = 1012.0
+offset_bottom = 80.0
+text = "x"
+
+[node name="PuzzleController" type="Node2D" parent="."]
+script = ExtResource("7_7xh3p")
+
+[node name="1" type="Button" parent="PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 400.0
+offset_top = 140.0
+offset_right = 557.0
+offset_bottom = 192.0
+script = ExtResource("8_2robf")
+id = "1"
+
+[node name="2" type="Button" parent="PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 401.0
+offset_top = 192.0
+offset_right = 558.0
+offset_bottom = 244.0
+script = ExtResource("8_2robf")
+id = "2"
+
+[node name="3" type="Button" parent="PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 400.0
+offset_top = 244.0
+offset_right = 557.0
+offset_bottom = 296.0
+script = ExtResource("8_2robf")
+id = "3"
+
+[node name="4" type="Button" parent="PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 399.0
+offset_top = 298.0
+offset_right = 556.0
+offset_bottom = 350.0
+script = ExtResource("8_2robf")
+id = "4"
+
+[node name="5" type="Button" parent="PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 400.0
+offset_top = 349.0
+offset_right = 557.0
+offset_bottom = 401.0
+script = ExtResource("8_2robf")
+
+[node name="6" type="Button" parent="PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 401.0
+offset_top = 404.0
+offset_right = 558.0
+offset_bottom = 456.0
+script = ExtResource("8_2robf")
+
+[node name="Line2D" type="Line2D" parent="PuzzleController"]
+
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
-[connection signal="text_submitted" from="Opdracht/LineEdit" to="." method="_on_line_edit_text_submitted"]
-[connection signal="pressed" from="ShowOpdracht" to="Opdracht" method="_on_show_opdracht_pressed"]
+[connection signal="pressed" from="ShowOpdracht" to="." method="_on_show_opdracht_pressed"]
+[connection signal="pressed" from="Alarm" to="." method="_on_alarm_pressed"]
+[connection signal="text_submitted" from="AnswerField" to="." method="_on_answer_field_text_submitted"]
+[connection signal="pressed" from="System/HideSystem" to="." method="_on_hide_system_pressed"]
+[connection signal="pressed" from="Opdracht2/HideOpdracht" to="." method="_on_hide_opdracht_pressed"]

@@ -1,9 +1,9 @@
 key,nl
 HINTS_1.1,85 kg*100mg/kg = 850 mg
 HINTS_1.2,"850 mg / 300 m^3 = 2,83 mg/m^3"
-HINTS_2.1,
-HINTS_2.2,
-HINTS_2.3,
+HINTS_2.1,"Aha, toch te ingewikkeld? Jullie moeten eerst het volume van de lucht berekenen die op de sensor drukt (h × b × l), voor het geval jullie de formule even kwijt waren. Vervolgens gebruiken jullie de dichtheid en het gevonden volume om de massa van de lucht te bepalen. Als laatste vullen jullie die massa in de functieformule in om de y-waarde te vinden — dat is de spanning. "
+HINTS_2.2,"De vier draadjes moeten de drukshakelaar, En-poort, comparator en zoemer verbinden. Hoe? Zoek maar zelf uit. "
+HINTS_2.3,uitwerking:
 HINTS_3.1,80 eenheden bij 40 graden Celcius
 HINTS_3.2,Verschil 30 graden Celcius en 40 graden Celcius= 40 eeheden
 HINTS_3.3,"40 eenheden (van 30 graden Celius) + 0,7*40=68 (afgerond 70)"
@@ -22,8 +22,3 @@ OPDRACHT_2,De gasten van de Bloedtak liggen nu nog te slapen in die kamer… maa
 OPDRACHT_3,Q10-regel \n Bij een temperatuurverschil van 10°C neemt het aantal actieve eenheden met een bepaalde verhouding toe. In dit geval verdubbelt het het aantal actieve eenheden bij een verhoging van 10°C.
 OPDRACHT_4,De Bloedtak is gek op het getal 3 en vermenigvuldigen.
 OPDRACHT_5,
-,
-,
-,Klik op de juiste tegels om veilig door de gang te kunnen lopen.
-,
-,X

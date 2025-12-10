@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1awp8vrnet6x"]
+[gd_scene load_steps=3 format=3 uid="uid://d1awp8vrnet6x"]
 
 [ext_resource type="Script" uid="uid://dtuo8i4mt5llq" path="res://scripts/hint.gd" id="1_lsscw"]
+[ext_resource type="Texture2D" uid="uid://c6q45dt8u7rht" path="res://images/2_answer.png" id="2_grpcu"]
 
 [node name="Hint" type="Node2D"]
 script = ExtResource("1_lsscw")
@@ -34,5 +35,10 @@ offset_bottom = 209.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "hint itn"
+
+[node name="2Answer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(604, 359)
+texture = ExtResource("2_grpcu")
 
 [connection signal="pressed" from="HideHint" to="." method="_on_hide_hint_pressed"]

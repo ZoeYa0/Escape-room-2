@@ -23,7 +23,7 @@ func _on_show_hint_pressed() -> void:
 				2:
 					actual_hint.text = tr("HINTS_2.2")
 				3:
-					actual_hint.text = tr("HINTS_2.3")
+					$"2Answer".visible = true
 		3:
 			Events.rooms["room3"]["hints"] += 1
 			match Events.rooms["room3"]["hints"]:
@@ -60,3 +60,4 @@ func _on_show_hint_pressed() -> void:
 
 func _on_hide_hint_pressed() -> void:
 	visible = false
+	$"2Answer".visible = false

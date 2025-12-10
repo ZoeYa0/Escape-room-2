@@ -1,12 +1,24 @@
 extends Control
 
+@onready var achtergrond_2: Sprite2D = $achtergrond2
+@onready var _2_dead: Sprite2D = $"2Dead"
+@onready var _2_alive: Sprite2D = $"2Alive"
+@onready var show_hint: Button = $ShowHint
+@onready var show_opdracht: Button = $ShowOpdracht
+@onready var hint: Node2D = $Hint
+@onready var opdracht_2: Panel = $Opdracht2
+@onready var inner_box: Panel = $Opdracht2/InnerBox
+@onready var description: Label = $Opdracht2/InnerBox/Description
+@onready var title: Label = $Opdracht2/InnerBox/Title
+@onready var antwoord: Label = $Opdracht2/InnerBox/Antwoord
+@onready var hide_opdracht: Button = $Opdracht2/HideOpdracht
+@onready var answer_field: LineEdit = $AnswerField
+@onready var alarm: Button = $Alarm
+@onready var system: Panel = $System
+@onready var hide_system: Button = $System/HideSystem
 
-# Nodes als variabelen voor makkelijk gebruik
-var dialogue_label
-var hint_sprite
-var show_button
-var hide_button
 var start_time = 0
+var power_on = false
 var dialogue_res = preload("res://dialogue/dialogueroom2.dialogue")
 
 func _ready():
@@ -16,21 +28,38 @@ func _ready():
 	for node in get_tree().get_nodes_in_group("Buttons"):
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
-	
 	#DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 	
-	
-func _process(delta):
+func _process(_delta):
 	Events.rooms["room2"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
 
 
 # Antwoord invullen
-var codes := ["92,86", "92.86", "92,86V", "92.86V", "92,86 V", "92.86 V", "92,86Volt", "92.86Volt", "92,86 Volt", "92.86 Volt", "92,86volt", "92.86volt", "92,86 volt", "92.86 volt"]
+var codes := ["2.4", "2,4"]
 
-func _on_line_edit_text_submitted(password: String) -> void:
-	if password not in codes:
-		$antwoord2.clear()
+
+func _on_show_opdracht_pressed() -> void:
+	opdracht_2.visible = true
+
+
+func _on_answer_field_text_submitted(new_text: String) -> void:
+	if new_text not in codes:
+		answer_field.clear()
 		return
 	else:
-		TimeTracker.end_scene()
-		get_tree().change_scene_to_file("res://scenes/room3.tscn")
+		power_on = true
+		print("power on")
+		answer_field.add_theme_color_override("font_color", Color.GREEN)#no bg color on textedit
+		answer_field.editable = false #nope. no green
+		alarm.modulate = Color.GREEN
+
+func _on_hide_opdracht_pressed() -> void:
+	opdracht_2.visible = false
+
+
+func _on_alarm_pressed() -> void:
+	system.visible = true
+
+
+func _on_hide_system_pressed() -> void:
+	system.visible = false
