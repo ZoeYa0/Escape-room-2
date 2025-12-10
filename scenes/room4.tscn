@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cpjed285bcogt" path="res://scripts/room4.gd" id="1_3j86r"]
 [ext_resource type="Texture2D" uid="uid://bph3aum82om02" path="res://images/achtergrond4.png" id="1_xadx6"]
-[ext_resource type="Texture2D" uid="uid://wfwh20tur51o" path="res://images/vraag4.png" id="4_uv3hv"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="4_uwnbk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uxnh"]
@@ -14,6 +13,9 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5idlq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mfne7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0weu7"]
+load_path = "res://.godot/imported/vraag4.png-70d012bf588cc9c998cda8b47472b422.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uv3hv"]
 
@@ -171,7 +173,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_mfne7")
 visible = false
 position = Vector2(593, 138)
 scale = Vector2(0.70142436, 0.65396345)
-texture = ExtResource("4_uv3hv")
+texture = SubResource("CompressedTexture2D_0weu7")
 
 [node name="hidevraag4" type="Button" parent="."]
 layout_mode = 0
@@ -335,12 +337,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_4lfmn")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_0qgqb")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_w40pj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j2a54")
-
-[node name="TimerLabel" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
 
 [node name="Hint" parent="." instance=ExtResource("4_uwnbk")]
 visible = false

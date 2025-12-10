@@ -1,10 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://davebhs2q7lsw"]
+[gd_scene load_steps=25 format=3 uid="uid://davebhs2q7lsw"]
 
 [ext_resource type="Script" uid="uid://1b5ckkgqyo8b" path="res://scripts/room1.gd" id="1_277jj"]
 [ext_resource type="Texture2D" uid="uid://wx3bsq5v6uu1" path="res://images/1.png" id="2_54ujy"]
 [ext_resource type="Texture2D" uid="uid://d3wab3wrsc5c" path="res://images/111.png" id="3_54ujy"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="4_21e2k"]
-[ext_resource type="PackedScene" uid="uid://2pcmqo354iq7" path="res://scenes/opdracht.tscn" id="4_actgu"]
+[ext_resource type="Texture2D" uid="uid://c0nqcu5pusm74" path="res://images/1_table.png" id="6_21e2k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_actgu"]
 
@@ -35,6 +35,18 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8nlxi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_toykf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwrhy"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_21706"]
+Panel/styles/panel = SubResource("StyleBoxFlat_qwrhy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21706"]
+bg_color = Color(0.7254902, 0.7254902, 0.7254902, 1)
+
+[sub_resource type="Theme" id="Theme_nrmkl"]
+Panel/styles/panel = SubResource("StyleBoxFlat_21706")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_277jj")
@@ -69,6 +81,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_qre4e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lcqa0")
 
 [node name="antwoord" type="Button" parent="." groups=["Buttons"]]
+visible = false
 offset_left = 801.0
 offset_top = 258.0
 offset_right = 1074.0
@@ -94,6 +107,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_toykf")
 visible = false
 
 [node name="Answer" type="Node2D" parent="."]
+visible = false
 
 [node name="LineEdit" type="LineEdit" parent="Answer"]
 offset_left = 398.0
@@ -109,10 +123,77 @@ offset_bottom = 298.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Geef je antwoord in mg/m^3 en rond af op 2 decimalen"
 
-[node name="Opdracht" parent="." instance=ExtResource("4_actgu")]
-instruction_text = "Bereken de concentratie van Aetherol in de lucht die er nodig is om de Bloedtak tijdelijk uit te schakelen"
+[node name="Opdracht" type="Panel" parent="."]
+offset_left = 55.0
+offset_top = 16.0
+offset_right = 1105.0
+offset_bottom = 628.0
+size_flags_vertical = 4
+theme = SubResource("Theme_21706")
+
+[node name="InnerBox" type="Panel" parent="Opdracht"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 17.0
+offset_top = 11.0
+offset_right = 1031.0
+offset_bottom = 602.0
+grow_horizontal = 2
+theme = SubResource("Theme_nrmkl")
+
+[node name="Label" type="Label" parent="Opdracht/InnerBox"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 85.0
+offset_right = 959.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Met een bepaald gas kan de Bloedtak buiten bewustzijn raken voor een tijdje. Dit is het fictieve gas: Aetherol. Jullie moeten dit gas via de gasleiding in de juiste hoeveelheid zien binnen te brengen in de ruimte waar de Bloedtak zit. Bereken de concentratie van Aetherol in de lucht die er nodig is om de Bloedtak tijdelijk uit te schakelen.
+
+Gebruik de tabel hiernaast."
+autowrap_mode = 2
+
+[node name="Title" type="Label" parent="Opdracht/InnerBox"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 29.0
+offset_right = 552.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 24
+text = "Opdracht"
+
+[node name="LineEdit" type="LineEdit" parent="Opdracht/InnerBox"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 508.0
+offset_right = 781.0
+offset_bottom = 564.0
+
+[node name="Antwoord" type="Label" parent="Opdracht/InnerBox"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 475.0
+offset_right = 387.0
+offset_bottom = 498.0
+text = "Voer je antwoord in mg/m^3:"
+
+[node name="HideOpdracht" type="Button" parent="Opdracht"]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 30.0
+offset_right = 1012.0
+offset_bottom = 80.0
+text = "x"
+
+[node name="1Table" type="Sprite2D" parent="Opdracht"]
+position = Vector2(751, 393)
+texture = ExtResource("6_21e2k")
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="antwoord" to="." method="_on_antwoord_pressed"]
-[connection signal="pressed" from="ShowOpdracht" to="Opdracht" method="_on_show_opdracht_pressed"]
+[connection signal="pressed" from="ShowOpdracht" to="." method="_on_show_opdracht_pressed"]
 [connection signal="text_submitted" from="Answer/LineEdit" to="." method="_on_answer_text_submitted"]
+[connection signal="text_submitted" from="Opdracht/InnerBox/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="Opdracht/HideOpdracht" to="." method="_on_hide_opdracht_pressed"]

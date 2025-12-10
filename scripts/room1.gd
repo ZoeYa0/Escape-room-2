@@ -8,7 +8,7 @@ extends Node2D
 @onready var answer: Node2D = $Answer
 @onready var line_edit: LineEdit = $Answer/LineEdit
 @onready var label: Label = $Answer/Label
-@onready var opdracht: Control = $Opdracht
+@onready var opdracht: Panel = $Opdracht
 
 
 var start_time = 0
@@ -25,7 +25,6 @@ func _ready():
 
 	#DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 	hint.visible = false
-	opdracht.visible = false
 	
 	
 func _process(_delta):
@@ -53,3 +52,11 @@ func _on_answer_text_submitted(new_text: String) -> void:
 	#else:
 		#Events.rooms["room1"]["wrong"] +=1
 		#get_tree().change_scene_to_file("res://scenes/room2.tscn")
+
+
+func _on_line_edit_text_submitted(new_text: String) -> void:
+	pass # Replace with function body.
+
+
+func _on_hide_opdracht_pressed() -> void:
+	opdracht.visible = false

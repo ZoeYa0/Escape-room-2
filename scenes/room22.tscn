@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b7jwjbapbm45d" path="res://scripts/room22.gd" id="1_28isl"]
 [ext_resource type="Texture2D" uid="uid://odiokettbdnf" path="res://images/achtergrond22.png" id="2_tmq5l"]
-[ext_resource type="Texture2D" uid="uid://begnni5j7pwli" path="res://images/hint22.png" id="3_qqbum"]
 [ext_resource type="Texture2D" uid="uid://cmtstr767eu73" path="res://images/lampenverbonden.png" id="4_4ypfm"]
 [ext_resource type="Texture2D" uid="uid://0rq4qsp1vsil" path="res://images/schakelaargesloten.png" id="5_8aym2"]
-[ext_resource type="Texture2D" uid="uid://d4gg2yjkfe70b" path="res://images/grijs.png" id="6_flbad"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ypfm"]
 
@@ -17,6 +15,9 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t107r"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ypfm"]
+load_path = "res://.godot/imported/hint22.png-4d55da4060a438f8bc46fbb77355dc4b.ctex"
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqc0p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ecxbw"]
@@ -26,6 +27,9 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r0vo6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr7gl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y8i8c"]
+load_path = "res://.godot/imported/grijs.png-097247221cd67fc8ad07c7bdf8302e01.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3db5s"]
 
@@ -72,7 +76,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_t107r")
 [node name="hint22" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(288, 138)
-texture = ExtResource("3_qqbum")
+texture = SubResource("CompressedTexture2D_4ypfm")
 
 [node name="hidehint22" type="Button" parent="."]
 visible = false
@@ -108,7 +112,7 @@ texture = ExtResource("5_8aym2")
 [node name="grijs" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(401, 375)
-texture = ExtResource("6_flbad")
+texture = SubResource("CompressedTexture2D_y8i8c")
 
 [node name="schakelaarsluiten" type="Button" parent="."]
 layout_mode = 0
@@ -154,12 +158,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_0072e")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_oeimy")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_rcqru")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g1e18")
-
-[node name="TimerLabel" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
 
 [connection signal="pressed" from="lampenverbinden" to="." method="_on_lampenverbinden_pressed"]
 [connection signal="pressed" from="schakelaarsluiten" to="." method="_on_schakelaarsluiten_pressed"]

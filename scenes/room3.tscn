@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://cbjouylrbq1s8"]
+[gd_scene load_steps=15 format=3 uid="uid://cbjouylrbq1s8"]
 
 [ext_resource type="Script" uid="uid://tfsfn33tq7a1" path="res://scripts/room3.gd" id="1_4aq8u"]
 [ext_resource type="Texture2D" uid="uid://c2i5iyjbht7sw" path="res://images/achtergrond3.png" id="1_j3vgb"]
-[ext_resource type="PackedScene" uid="uid://2pcmqo354iq7" path="res://scenes/opdracht.tscn" id="4_op2f5"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="6_ggopl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bcdn3"]
@@ -90,13 +89,6 @@ position = Vector2(4, -3)
 position = Vector2(630.75, 149.25)
 scale = Vector2(0.9004758, 0.67426276)
 texture = SubResource("CompressedTexture2D_3r3bf")
-
-[node name="Opdracht" parent="." instance=ExtResource("4_op2f5")]
-layout_mode = 0
-instruction_text = "Q10-regel
-
- Bij een temperatuurverschil van 10°C neemt het aantal actieve eenheden met een bepaalde verhouding toe. In dit geval verdubbelt het het aantal actieve eenheden bij een verhoging van 10°C."
-requires_input = true
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="text_submitted" from="antwoordinvullen" to="." method="_on_antwoordinvullen_text_submitted"]
