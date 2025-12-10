@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bquqgsei7vgig"
-path="res://.godot/imported/achtergrond51.png-e48c6bc0ee406be8087501922927199b.ctex"
+uid="uid://c0kq8cuvie6rj"
+path="res://.godot/imported/vraag51.png-d95fcaf142b7f03577cc0a9827dd7a39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/achtergrond51.png"
-dest_files=["res://.godot/imported/achtergrond51.png-e48c6bc0ee406be8087501922927199b.ctex"]
+source_file="res://images/vraag51.png"
+dest_files=["res://.godot/imported/vraag51.png-d95fcaf142b7f03577cc0a9827dd7a39.ctex"]
 
 [params]
 

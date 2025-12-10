@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://begnni5j7pwli"
-path="res://.godot/imported/hint22.png-e3269766b7ccce02b0da4ffa72f11a86.ctex"
+uid="uid://odiokettbdnf"
+path="res://.godot/imported/achtergrond22.png-fb2ec3876660d27a7e274561d67da611.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hint22.png"
-dest_files=["res://.godot/imported/hint22.png-e3269766b7ccce02b0da4ffa72f11a86.ctex"]
+source_file="res://images/achtergrond22.png"
+dest_files=["res://.godot/imported/achtergrond22.png-fb2ec3876660d27a7e274561d67da611.ctex"]
 
 [params]
 

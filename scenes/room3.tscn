@@ -1,18 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://cbjouylrbq1s8"]
+[gd_scene load_steps=16 format=3 uid="uid://cbjouylrbq1s8"]
 
 [ext_resource type="Script" uid="uid://tfsfn33tq7a1" path="res://scripts/room3.gd" id="1_4aq8u"]
-[ext_resource type="Texture2D" uid="uid://c2i5iyjbht7sw" path="res://assets/achtergrond3.png" id="1_j3vgb"]
+[ext_resource type="Texture2D" uid="uid://c2i5iyjbht7sw" path="res://images/achtergrond3.png" id="1_j3vgb"]
+[ext_resource type="PackedScene" uid="uid://2pcmqo354iq7" path="res://scenes/opdracht.tscn" id="4_op2f5"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="6_ggopl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3r3bf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_op2f5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_17neo"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ggopl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4x0d7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bcdn3"]
 
@@ -34,6 +25,9 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iaiwk"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3r3bf"]
+load_path = "res://.godot/imported/q10uitleg.png-3d25c5702e1942771034a01f28d2dc50.ctex"
+
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -43,18 +37,6 @@ script = ExtResource("1_4aq8u")
 position = Vector2(579, 290)
 scale = Vector2(1.5234479, 1.2702464)
 texture = ExtResource("1_j3vgb")
-
-[node name="showq10" type="Button" parent="."]
-layout_mode = 0
-offset_left = 262.0
-offset_top = 36.0
-offset_right = 469.0
-offset_bottom = 172.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_3r3bf")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_op2f5")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_17neo")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ggopl")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4x0d7")
 
 [node name="hideq10" type="Button" parent="."]
 layout_mode = 0
@@ -84,10 +66,10 @@ offset_bottom = 327.0
 
 [node name="showantwoordinvullen" type="Button" parent="."]
 layout_mode = 0
-offset_left = 703.0
-offset_top = 401.0
-offset_right = 841.0
-offset_bottom = 449.0
+offset_left = 696.0
+offset_top = 406.0
+offset_right = 834.0
+offset_bottom = 454.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_8wius")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_dgrhu")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_o7801")
@@ -103,6 +85,18 @@ offset_bottom = 23.0
 [node name="Hint" parent="." instance=ExtResource("6_ggopl")]
 visible = false
 position = Vector2(4, -3)
+
+[node name="Q10Uitleg" type="Sprite2D" parent="."]
+position = Vector2(630.75, 149.25)
+scale = Vector2(0.9004758, 0.67426276)
+texture = SubResource("CompressedTexture2D_3r3bf")
+
+[node name="Opdracht" parent="." instance=ExtResource("4_op2f5")]
+layout_mode = 0
+instruction_text = "Q10-regel
+
+ Bij een temperatuurverschil van 10°C neemt het aantal actieve eenheden met een bepaalde verhouding toe. In dit geval verdubbelt het het aantal actieve eenheden bij een verhoging van 10°C."
+requires_input = true
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="text_submitted" from="antwoordinvullen" to="." method="_on_antwoordinvullen_text_submitted"]

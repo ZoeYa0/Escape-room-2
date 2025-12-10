@@ -1,18 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://7ivaxx0cbx40"]
+[gd_scene load_steps=16 format=3 uid="uid://7ivaxx0cbx40"]
 
 [ext_resource type="Script" uid="uid://whw2je2lx36x" path="res://scripts/room2.gd" id="1_d3uvb"]
-[ext_resource type="Texture2D" uid="uid://dk3cnf7ar3htb" path="res://assets/achtergrond2.png" id="1_klc7l"]
+[ext_resource type="Texture2D" uid="uid://dk3cnf7ar3htb" path="res://images/achtergrond2.png" id="1_klc7l"]
+[ext_resource type="Texture2D" uid="uid://didhv6djdccc6" path="res://images/2_dead.png" id="3_duage"]
+[ext_resource type="Texture2D" uid="uid://b3ynv2s4svs02" path="res://images/2_alive.png" id="4_ucjjd"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="4_yfplu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5pwh"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dbehi"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7xmq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olrvt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wf3f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yfplu"]
 
@@ -24,6 +16,16 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2robf"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5pwh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dbehi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7xmq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olrvt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wf3f"]
+
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -31,64 +33,84 @@ script = ExtResource("1_d3uvb")
 
 [node name="achtergrond2" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(577, 322.5)
-scale = Vector2(0.9015625, 0.8450521)
+position = Vector2(573.5, 322.5)
+scale = Vector2(0.5953125, 0.563368)
 texture = ExtResource("1_klc7l")
 
-[node name="ShowOpdracht" type="Button" parent="achtergrond2" groups=["Buttons"]]
-offset_left = 361.59448
-offset_top = -315.36517
-offset_right = 577.8856
-offset_bottom = -159.16179
-theme_override_styles/normal = SubResource("StyleBoxEmpty_s5pwh")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_dbehi")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_c7xmq")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_olrvt")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5wf3f")
+[node name="2Dead" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(571, 324)
+scale = Vector2(0.569, 0.5466667)
+texture = ExtResource("3_duage")
+
+[node name="2Alive" type="Sprite2D" parent="."]
+position = Vector2(587, 370)
+scale = Vector2(0.5989583, 0.5642361)
+texture = ExtResource("4_ucjjd")
 
 [node name="ShowHint" type="Button" parent="."]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 59.0
-offset_right = 252.0
-offset_bottom = 138.0
+offset_left = 90.0
+offset_top = 39.0
+offset_right = 249.0
+offset_bottom = 191.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yfplu")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_duage")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ucjjd")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_7xh3p")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2robf")
 
-[node name="antwoord2" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 206.0
-offset_right = 425.0
-offset_bottom = 237.0
+[node name="Opdracht" type="Node2D" parent="."]
 
-[node name="TimerLabel" type="Label" parent="."]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="Opdracht"]
+offset_left = 27.0
+offset_top = 27.0
+offset_right = 1097.0
+offset_bottom = 620.0
+color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+
+[node name="LineEdit" type="LineEdit" parent="Opdracht"]
+offset_left = 366.0
+offset_top = 495.0
+offset_right = 671.0
+offset_bottom = 538.0
+
+[node name="Label" type="Label" parent="Opdracht"]
+offset_left = 96.0
+offset_top = 90.0
+offset_right = 994.0
+offset_bottom = 373.0
+text = "Oké, luister goed. De gasten van de Bloedtak liggen nu nog te slapen in die kamer… maar niemand weet hoelang het slaapmiddel blijft werken. Dus jullie moeten meteen een alarm in elkaar zetten zodat we het merken zodra er iemand begint te bewegen. Schiet op — voordat ze wakker worden. 
+
+De lucht drukt op de sensor, en jullie moeten de juiste druk berekenen zodat de sensor gedrukt wordt.
+
+
+De kamer is een vierkant(5/5/5m). De sensor is (1/1/5m) 
+
+De dichtheid van de lucht is 1,293 kg/m^3 
+
+Functieformule: y= 0,2 * x + 0,5 
+
+
+
+Voer antwoord in: "
+autowrap_mode = 2
+
+[node name="ShowOpdracht" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 896.0
+offset_top = 49.0
+offset_right = 1095.2911
+offset_bottom = 183.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s5pwh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dbehi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c7xmq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_olrvt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5wf3f")
 
 [node name="Hint" parent="." instance=ExtResource("4_yfplu")]
 visible = false
 
-[node name="Answer" type="Node2D" parent="."]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Answer"]
-offset_left = 27.0
-offset_top = 27.0
-offset_right = 1138.0
-offset_bottom = 630.0
-
-[node name="LineEdit" type="LineEdit" parent="Answer"]
-offset_left = 383.0
-offset_top = 553.0
-offset_right = 688.0
-offset_bottom = 596.0
-
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
-[connection signal="text_submitted" from="antwoord2" to="." method="_on_antwoord_2_text_submitted"]
-[connection signal="text_submitted" from="antwoord2" to="." method="_on_line_edit_text_submitted"]
+[connection signal="text_submitted" from="Opdracht/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="ShowOpdracht" to="Opdracht" method="_on_show_opdracht_pressed"]

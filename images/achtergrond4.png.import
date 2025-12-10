@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iaaetgsmtqdx"
-path="res://.godot/imported/opdrachtknop1.png-7ecb052d255d163ab5c4929237614367.ctex"
+uid="uid://bph3aum82om02"
+path="res://.godot/imported/achtergrond4.png-ae533b6ae07c516fbbc7fbeffdcd3220.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/opdrachtknop1.png"
-dest_files=["res://.godot/imported/opdrachtknop1.png-7ecb052d255d163ab5c4929237614367.ctex"]
+source_file="res://images/achtergrond4.png"
+dest_files=["res://.godot/imported/achtergrond4.png-ae533b6ae07c516fbbc7fbeffdcd3220.ctex"]
 
 [params]
 

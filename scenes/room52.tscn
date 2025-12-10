@@ -1,10 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://bg3kf6nthm41k"]
 
 [ext_resource type="Script" uid="uid://doqdavwhcxinc" path="res://scripts/room52.gd" id="1_1hm3t"]
-[ext_resource type="Texture2D" uid="uid://c5x2ucj25oxn1" path="res://assets/achtergrond52.png" id="1_rqp4b"]
+[ext_resource type="Texture2D" uid="uid://c5x2ucj25oxn1" path="res://images/achtergrond52.png" id="1_rqp4b"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_pntt1"]
-[ext_resource type="Texture2D" uid="uid://bwu0elnh23w01" path="res://assets/hint52.png" id="4_ex7pw"]
-[ext_resource type="Texture2D" uid="uid://blep7knj4hbth" path="res://assets/vraag52.png" id="5_rysxi"]
+[ext_resource type="Texture2D" path="res://assets/hint52.png" id="4_ex7pw"]
+[ext_resource type="Texture2D" uid="uid://blep7knj4hbth" path="res://images/vraag52.png" id="5_rysxi"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="6_fo6w4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fo6w4"]

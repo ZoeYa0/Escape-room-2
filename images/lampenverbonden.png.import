@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwu0elnh23w01"
-path="res://.godot/imported/hint52.png-ece343c38648320f71abd71949b84690.ctex"
+uid="uid://cmtstr767eu73"
+path="res://.godot/imported/lampenverbonden.png-cc1282a61151a0df24d3bd872a990105.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hint52.png"
-dest_files=["res://.godot/imported/hint52.png-ece343c38648320f71abd71949b84690.ctex"]
+source_file="res://images/lampenverbonden.png"
+dest_files=["res://.godot/imported/lampenverbonden.png-cc1282a61151a0df24d3bd872a990105.ctex"]
 
 [params]
 

@@ -1,7 +1,5 @@
 extends Control
 
-@onready var showhint2 = $showhint2
-@onready var hint2 = $hint2
 
 # Nodes als variabelen voor makkelijk gebruik
 var dialogue_label

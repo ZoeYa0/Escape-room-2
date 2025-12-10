@@ -1,8 +1,8 @@
 [gd_scene load_steps=75 format=3 uid="uid://1sp7px3uiyoa"]
 
 [ext_resource type="Script" uid="uid://cpjed285bcogt" path="res://scripts/room4.gd" id="1_3j86r"]
-[ext_resource type="Texture2D" uid="uid://bph3aum82om02" path="res://assets/achtergrond4.png" id="1_xadx6"]
-[ext_resource type="Texture2D" uid="uid://wfwh20tur51o" path="res://assets/vraag4.png" id="4_uv3hv"]
+[ext_resource type="Texture2D" uid="uid://bph3aum82om02" path="res://images/achtergrond4.png" id="1_xadx6"]
+[ext_resource type="Texture2D" uid="uid://wfwh20tur51o" path="res://images/vraag4.png" id="4_uv3hv"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="4_uwnbk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uxnh"]

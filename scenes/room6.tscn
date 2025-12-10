@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ol4746xbjja4"]
 
-[ext_resource type="Texture2D" uid="uid://cb2ndqbsriv7a" path="res://assets/achtergrond6.png" id="1_5duye"]
+[ext_resource type="Texture2D" uid="uid://cb2ndqbsriv7a" path="res://images/achtergrond6.png" id="1_5duye"]
 [ext_resource type="Script" uid="uid://byremsrip5wtw" path="res://scripts/room6.gd" id="1_qv633"]
 
 [node name="Node2D" type="Control"]

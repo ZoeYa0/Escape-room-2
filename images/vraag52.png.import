@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0rq4qsp1vsil"
-path="res://.godot/imported/schakelaargesloten.png-41f9b74ccd788848c1ee79514d84f2e3.ctex"
+uid="uid://blep7knj4hbth"
+path="res://.godot/imported/vraag52.png-d89c54d251dbabe85f213ba3006e678d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/schakelaargesloten.png"
-dest_files=["res://.godot/imported/schakelaargesloten.png-41f9b74ccd788848c1ee79514d84f2e3.ctex"]
+source_file="res://images/vraag52.png"
+dest_files=["res://.godot/imported/vraag52.png-d89c54d251dbabe85f213ba3006e678d.ctex"]
 
 [params]
 

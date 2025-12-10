@@ -1,20 +1,15 @@
 extends Node2D
 
 @onready var achtergrond_1: Sprite2D = $achtergrond1
-@onready var showhint_1: Button = $showhint1
+@onready var show_hint: Button = $ShowHint
 @onready var antwoord: Button = $antwoord
-@onready var opdrachtknop: Sprite2D = $opdrachtknop
 @onready var show_opdracht: Button = $ShowOpdracht
-@onready var timer_label: Label = $TimerLabel
 @onready var hint: Node2D = $Hint
-@onready var hint_1: Sprite2D = $Hint/hint1
-@onready var hidehint_1: Button = $Hint/hidehint1
-@onready var opdracht: Node2D = $Opdracht
-@onready var opdracht_1: Sprite2D = $Opdracht/opdracht1
-@onready var hide_opdracht: Button = $Opdracht/HideOpdracht
 @onready var answer: Node2D = $Answer
 @onready var line_edit: LineEdit = $Answer/LineEdit
 @onready var label: Label = $Answer/Label
+@onready var opdracht: Control = $Opdracht
+
 
 var start_time = 0
 var dialogue_res = preload("res://dialogue/dialogueroom1.dialogue")
@@ -39,10 +34,6 @@ func _process(_delta):
 # --- OPDRACHT1 BUTTONS ---
 func _on_show_opdracht_pressed() -> void:
 	opdracht.visible = true
-
-func _on_hide_opdracht_pressed() -> void:
-	opdracht.visible = false
-
 
 var codes := ["2.83", "2,83", "2.83 mg/m^3", "2,83 mg/m^3"]
 

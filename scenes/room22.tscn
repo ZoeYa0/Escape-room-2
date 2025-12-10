@@ -1,11 +1,11 @@
 [gd_scene load_steps=27 format=3 uid="uid://booswlxv4ps2"]
 
 [ext_resource type="Script" uid="uid://b7jwjbapbm45d" path="res://scripts/room22.gd" id="1_28isl"]
-[ext_resource type="Texture2D" uid="uid://odiokettbdnf" path="res://assets/achtergrond22.png" id="2_tmq5l"]
-[ext_resource type="Texture2D" uid="uid://begnni5j7pwli" path="res://assets/hint22.png" id="3_qqbum"]
-[ext_resource type="Texture2D" uid="uid://cmtstr767eu73" path="res://assets/lampenverbonden.png" id="4_4ypfm"]
-[ext_resource type="Texture2D" uid="uid://0rq4qsp1vsil" path="res://assets/schakelaargesloten.png" id="5_8aym2"]
-[ext_resource type="Texture2D" uid="uid://d4gg2yjkfe70b" path="res://assets/grijs.png" id="6_flbad"]
+[ext_resource type="Texture2D" uid="uid://odiokettbdnf" path="res://images/achtergrond22.png" id="2_tmq5l"]
+[ext_resource type="Texture2D" uid="uid://begnni5j7pwli" path="res://images/hint22.png" id="3_qqbum"]
+[ext_resource type="Texture2D" uid="uid://cmtstr767eu73" path="res://images/lampenverbonden.png" id="4_4ypfm"]
+[ext_resource type="Texture2D" uid="uid://0rq4qsp1vsil" path="res://images/schakelaargesloten.png" id="5_8aym2"]
+[ext_resource type="Texture2D" uid="uid://d4gg2yjkfe70b" path="res://images/grijs.png" id="6_flbad"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ypfm"]
 

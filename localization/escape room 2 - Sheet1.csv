@@ -15,3 +15,15 @@ HINTS_5.3,Ook hier moet je goed kijken naar de gekregen informatie over de chemi
 HINTS_5.4,Veel stress is een belangrijk detail.
 HINTS_5.5,Afdruk C bevat veel stresszweet
 HINTS_5.6,index is dus 03 en soms extra detail 12 dus de code is 0312
+UI_SCORE,Tijd: {time} | Fouten: {wrong} | Hints: {hints}
+UI_TOT_SCORE,Totale statistieken:\n\nTotale tijd: %d \nTotaal aantal verkeerde pogingen: %d \nTotaal aantal hints: %d
+OPDRACHT_1,Bereken de concentratie van Aetherol in de lucht die er nodig is om de Bloedtak tijdelijk uit te schakelen
+OPDRACHT_2,De gasten van de Bloedtak liggen nu nog te slapen in die kamer… maar niemand weet hoelang het slaapmiddel blijft werken. Dus jullie moeten meteen een alarm in elkaar zetten zodat we het merken zodra er iemand begint te bewegen. Schiet op — voordat ze wakker worden.
+OPDRACHT_3,Q10-regel \n Bij een temperatuurverschil van 10°C neemt het aantal actieve eenheden met een bepaalde verhouding toe. In dit geval verdubbelt het het aantal actieve eenheden bij een verhoging van 10°C.
+OPDRACHT_4,De Bloedtak is gek op het getal 3 en vermenigvuldigen.
+OPDRACHT_5,
+,
+,
+,Klik op de juiste tegels om veilig door de gang te kunnen lopen.
+,
+,X

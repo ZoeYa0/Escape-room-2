@@ -1,10 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://davebhs2q7lsw"]
+[gd_scene load_steps=21 format=3 uid="uid://davebhs2q7lsw"]
 
 [ext_resource type="Script" uid="uid://1b5ckkgqyo8b" path="res://scripts/room1.gd" id="1_277jj"]
-[ext_resource type="Texture2D" uid="uid://d3wab3wrsc5c" path="res://assets/1.png" id="2_54ujy"]
+[ext_resource type="Texture2D" uid="uid://wx3bsq5v6uu1" path="res://images/1.png" id="2_54ujy"]
+[ext_resource type="Texture2D" uid="uid://d3wab3wrsc5c" path="res://images/111.png" id="3_54ujy"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="4_21e2k"]
-[ext_resource type="Texture2D" uid="uid://iaaetgsmtqdx" path="res://assets/opdrachtknop1.png" id="5_21e2k"]
-[ext_resource type="Texture2D" uid="uid://c8id6p7i5ig8l" path="res://assets/opdracht1.png" id="6_dtrb7"]
+[ext_resource type="PackedScene" uid="uid://2pcmqo354iq7" path="res://scenes/opdracht.tscn" id="4_actgu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_actgu"]
 
@@ -36,22 +36,22 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_toykf"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7iym2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhtnt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aab6w"]
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_277jj")
 
-[node name="achtergrond1" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(574, 325)
-scale = Vector2(1.0186006, 1.0092592)
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.596875, 0.5607639)
 texture = ExtResource("2_54ujy")
 
+[node name="achtergrond1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(574, 325)
+scale = Vector2(1.0186006, 1.0092592)
+texture = ExtResource("3_54ujy")
+
 [node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -79,16 +79,11 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_3k0wu")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_gsthd")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xvwhl")
 
-[node name="opdrachtknop" type="Sprite2D" parent="."]
-position = Vector2(896.75, 389.25)
-scale = Vector2(0.611111, 0.597561)
-texture = ExtResource("5_21e2k")
-
 [node name="ShowOpdracht" type="Button" parent="." groups=["Buttons"]]
-offset_left = 804.0
-offset_top = 359.0
-offset_right = 991.0
-offset_bottom = 429.0
+offset_left = 713.0
+offset_top = 318.0
+offset_right = 1008.0
+offset_bottom = 488.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kxjkn")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_erp5q")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_8tq5h")
@@ -97,23 +92,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_toykf")
 
 [node name="Hint" parent="." instance=ExtResource("4_21e2k")]
 visible = false
-
-[node name="Opdracht" type="Node2D" parent="."]
-visible = false
-
-[node name="opdracht1" type="Sprite2D" parent="Opdracht"]
-position = Vector2(572.5, 136.5)
-scale = Vector2(0.71946, 0.581864)
-texture = ExtResource("6_dtrb7")
-
-[node name="HideOpdracht" type="Button" parent="Opdracht" groups=["Buttons"]]
-offset_left = 990.0
-offset_top = 44.0
-offset_right = 1051.0
-offset_bottom = 88.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_7iym2")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_bhtnt")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_aab6w")
 
 [node name="Answer" type="Node2D" parent="."]
 
@@ -131,8 +109,10 @@ offset_bottom = 298.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Geef je antwoord in mg/m^3 en rond af op 2 decimalen"
 
+[node name="Opdracht" parent="." instance=ExtResource("4_actgu")]
+instruction_text = "Bereken de concentratie van Aetherol in de lucht die er nodig is om de Bloedtak tijdelijk uit te schakelen"
+
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="antwoord" to="." method="_on_antwoord_pressed"]
-[connection signal="pressed" from="ShowOpdracht" to="." method="_on_show_opdracht_pressed"]
-[connection signal="pressed" from="Opdracht/HideOpdracht" to="." method="_on_hide_opdracht_pressed"]
+[connection signal="pressed" from="ShowOpdracht" to="Opdracht" method="_on_show_opdracht_pressed"]
 [connection signal="text_submitted" from="Answer/LineEdit" to="." method="_on_answer_text_submitted"]

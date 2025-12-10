@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8u5kkp7v8x1q"
-path="res://.godot/imported/q10uitleg.png-06aaafbe6848cbfc1532c74508f63492.ctex"
+uid="uid://didhv6djdccc6"
+path="res://.godot/imported/2_dead.png-82d453e23cf88cb3aa4f95ff4cc9d63d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/q10uitleg.png"
-dest_files=["res://.godot/imported/q10uitleg.png-06aaafbe6848cbfc1532c74508f63492.ctex"]
+source_file="res://images/2_dead.png"
+dest_files=["res://.godot/imported/2_dead.png-82d453e23cf88cb3aa4f95ff4cc9d63d.ctex"]
 
 [params]
 
