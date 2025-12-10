@@ -27,7 +27,12 @@ offset_bottom = 102.0
 text = "Hint"
 
 [node name="ActualHint" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 162.0
+offset_top = 115.0
+offset_right = 994.0
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "hint itn"
 
 [connection signal="pressed" from="HideHint" to="." method="_on_hide_hint_pressed"]

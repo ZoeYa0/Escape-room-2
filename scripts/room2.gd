@@ -19,7 +19,7 @@ func _ready():
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
 	
-	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
+	#DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 	
 	
 func _process(delta):
@@ -35,4 +35,4 @@ func _on_line_edit_text_submitted(password: String) -> void:
 		return
 	else:
 		TimeTracker.end_scene()
-		get_tree().change_scene_to_file("res://scenes/room22.tscn")
+		get_tree().change_scene_to_file("res://scenes/room3.tscn")

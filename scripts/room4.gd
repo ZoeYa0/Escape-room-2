@@ -1,9 +1,8 @@
 extends Control
 
-
+#---------------------ROOM 4------------
 var clicked_numbers := []        # Lijst met aangeklikte nummers
 var total_numbers := 12          # Totaal aantal getalknoppen
-var next_scene_path := "res://scenes/room5.tscn"
 var start_time = 0
 
 func _ready():

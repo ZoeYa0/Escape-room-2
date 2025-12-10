@@ -115,6 +115,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Hint" parent="." instance=ExtResource("6_fo6w4")]
+visible = false
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="hidehint52" to="." method="_on_hidehint_52_pressed"]

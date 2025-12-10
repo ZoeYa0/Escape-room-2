@@ -1,8 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://7ivaxx0cbx40"]
+[gd_scene load_steps=14 format=3 uid="uid://7ivaxx0cbx40"]
 
 [ext_resource type="Script" uid="uid://whw2je2lx36x" path="res://scripts/room2.gd" id="1_d3uvb"]
 [ext_resource type="Texture2D" uid="uid://dk3cnf7ar3htb" path="res://assets/achtergrond2.png" id="1_klc7l"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="4_yfplu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5pwh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dbehi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7xmq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olrvt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wf3f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yfplu"]
 
@@ -25,6 +35,17 @@ position = Vector2(577, 322.5)
 scale = Vector2(0.9015625, 0.8450521)
 texture = ExtResource("1_klc7l")
 
+[node name="ShowOpdracht" type="Button" parent="achtergrond2" groups=["Buttons"]]
+offset_left = 361.59448
+offset_top = -315.36517
+offset_right = 577.8856
+offset_bottom = -159.16179
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s5pwh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dbehi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c7xmq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_olrvt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5wf3f")
+
 [node name="ShowHint" type="Button" parent="."]
 layout_mode = 0
 offset_left = 63.0
@@ -39,10 +60,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_2robf")
 
 [node name="antwoord2" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 409.0
-offset_top = 584.0
-offset_right = 752.0
-offset_bottom = 615.0
+offset_left = 82.0
+offset_top = 206.0
+offset_right = 425.0
+offset_bottom = 237.0
 
 [node name="TimerLabel" type="Label" parent="."]
 visible = false
@@ -52,6 +73,21 @@ offset_bottom = 23.0
 
 [node name="Hint" parent="." instance=ExtResource("4_yfplu")]
 visible = false
+
+[node name="Answer" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Answer"]
+offset_left = 27.0
+offset_top = 27.0
+offset_right = 1138.0
+offset_bottom = 630.0
+
+[node name="LineEdit" type="LineEdit" parent="Answer"]
+offset_left = 383.0
+offset_top = 553.0
+offset_right = 688.0
+offset_bottom = 596.0
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="text_submitted" from="antwoord2" to="." method="_on_antwoord_2_text_submitted"]

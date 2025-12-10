@@ -47,18 +47,18 @@ script = ExtResource("1_277jj")
 
 [node name="achtergrond1" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(574.5, 326)
-scale = Vector2(2.7210405, 2.3695652)
+position = Vector2(574, 325)
+scale = Vector2(1.0186006, 1.0092592)
 texture = ExtResource("2_54ujy")
 
 [node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 62.000008
-offset_top = 310.0
-offset_right = 63.969994
-offset_bottom = 311.6982
+offset_left = 74.00001
+offset_top = 341.00003
+offset_right = 75.19945
+offset_bottom = 342.69824
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(137.5644, -46.519108)
@@ -69,10 +69,10 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_qre4e")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lcqa0")
 
 [node name="antwoord" type="Button" parent="." groups=["Buttons"]]
-offset_left = 804.0
-offset_top = 259.0
-offset_right = 1077.0
-offset_bottom = 340.0
+offset_left = 801.0
+offset_top = 258.0
+offset_right = 1074.0
+offset_bottom = 339.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_npsde")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ml6mh")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_3k0wu")
@@ -95,12 +95,8 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_8tq5h")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_8nlxi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_toykf")
 
-[node name="TimerLabel" type="Label" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="Hint" parent="." instance=ExtResource("4_21e2k")]
+visible = false
 
 [node name="Opdracht" type="Node2D" parent="."]
 visible = false

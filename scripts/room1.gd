@@ -20,6 +20,7 @@ var start_time = 0
 var dialogue_res = preload("res://dialogue/dialogueroom1.dialogue")
 
 func _ready():
+	TranslationServer.set_locale("nl")
 	Events.current_room = 1
 	start_time = Time.get_ticks_msec()
 	#FORCING pointing hand
@@ -27,42 +28,13 @@ func _ready():
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
 
-	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
-
-	# --- Startstatus ---
+	#DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 	hint.visible = false
 	opdracht.visible = false
-	answer.visible = false
-
-	# --- Signals ---
-	#show_button.pressed.connect(_on_showhint_1_pressed)
-	#hide_button.pressed.connect(_on_hidehint_1_pressed)
-	#antwoord_button.pressed.connect(_on_antwoord_pressed)
-	#antwoordinvullen.text_submitted.connect(_on_antwoordinvullen_text_submitted)
-
-	# ✔️ Nieuwe signals
-	#show_opdracht1_button.pressed.connect(_on_show_opdracht1_pressed)
-	#hide_opdracht1_button.pressed.connect(_on_hide_opdracht1_pressed)
 	
 	
 func _process(_delta):
 	Events.rooms["room1"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
-
-
-
-# --- HINT BUTTONS ---
-func _on_showhint_1_pressed() -> void:
-	hint.visible = true
-	
-
-func _on_hidehint_1_pressed() -> void:
-	hint.visible = false
-
-
-# --- ANTWOORD BUTTON ---
-func _on_antwoord_pressed() -> void:
-	answer.visible = true
-
 
 # --- OPDRACHT1 BUTTONS ---
 func _on_show_opdracht_pressed() -> void:
@@ -72,15 +44,21 @@ func _on_hide_opdracht_pressed() -> void:
 	opdracht.visible = false
 
 
-
-# --- INVOER CONTROLEREN ---
 var codes := ["2.83", "2,83", "2.83 mg/m^3", "2,83 mg/m^3"]
-
 
 func _on_answer_text_submitted(new_text: String) -> void:
 	if new_text not in codes:
-		label.clear()
+		line_edit.clear()
 		return
 	else:
-		TimeTracker.end_scene()
 		get_tree().change_scene_to_file("res://scenes/room2.tscn")
+		Events.rooms["room1"]["wrong"] +=1
+
+#func _on_antwoord_pressed() -> void:
+	#var answer = line_edit.text.strip_edges()
+	#if answer.to_lower() not in codes: 
+		#label.clear()
+		#return	
+	#else:
+		#Events.rooms["room1"]["wrong"] +=1
+		#get_tree().change_scene_to_file("res://scenes/room2.tscn")
