@@ -1,7 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://7ivaxx0cbx40"]
+[gd_scene load_steps=26 format=3 uid="uid://7ivaxx0cbx40"]
 
 [ext_resource type="Script" uid="uid://whw2je2lx36x" path="res://scripts/room2.gd" id="1_d3uvb"]
 [ext_resource type="Texture2D" uid="uid://dk3cnf7ar3htb" path="res://images/achtergrond2.png" id="1_klc7l"]
+[ext_resource type="Resource" uid="uid://bmjkiae61vnxa" path="res://dialogue/2_ending.dialogue" id="2_2robf"]
+[ext_resource type="Resource" uid="uid://cmi3ev12vp0jv" path="res://localization/2_no_power.dialogue" id="3_c7xmq"]
 [ext_resource type="Texture2D" uid="uid://didhv6djdccc6" path="res://images/2_dead.png" id="3_duage"]
 [ext_resource type="Texture2D" uid="uid://b3ynv2s4svs02" path="res://images/2_alive.png" id="4_ucjjd"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="4_yfplu"]
@@ -32,22 +34,24 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oibp2"]
 bg_color = Color(1.347661e-06, 0.7260562, 0.17855048, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwrhy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xh3p"]
 bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Theme" id="Theme_yfplu"]
-Panel/styles/panel = SubResource("StyleBoxFlat_qwrhy")
+Panel/styles/panel = SubResource("StyleBoxFlat_7xh3p")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucjjd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2robf"]
 bg_color = Color(0.9701547, 0.812877, 0.9012742, 1)
 
 [sub_resource type="Theme" id="Theme_duage"]
-Panel/styles/panel = SubResource("StyleBoxFlat_ucjjd")
+Panel/styles/panel = SubResource("StyleBoxFlat_2robf")
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_d3uvb")
+ending = ExtResource("2_2robf")
+no_power = ExtResource("3_c7xmq")
 
 [node name="achtergrond2" type="Sprite2D" parent="."]
 z_index = -1
@@ -156,6 +160,65 @@ offset_right = 1012.0
 offset_bottom = 80.0
 text = "x"
 
+[node name="PuzzleController" type="Node2D" parent="System" groups=["puzzle_controller"]]
+position = Vector2(-55, -16)
+script = ExtResource("7_7xh3p")
+
+[node name="1" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 524.0
+offset_top = 160.0
+offset_right = 538.0
+offset_bottom = 174.0
+script = ExtResource("8_2robf")
+id = "1"
+
+[node name="2" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 525.0
+offset_top = 212.0
+offset_right = 539.0
+offset_bottom = 226.0
+script = ExtResource("8_2robf")
+id = "2"
+
+[node name="3" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 523.0
+offset_top = 262.0
+offset_right = 540.0
+offset_bottom = 279.0
+script = ExtResource("8_2robf")
+id = "3"
+
+[node name="4" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 523.0
+offset_top = 316.0
+offset_right = 538.0
+offset_bottom = 333.0
+script = ExtResource("8_2robf")
+id = "4"
+
+[node name="5" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 523.0
+offset_top = 368.0
+offset_right = 540.0
+offset_bottom = 386.0
+script = ExtResource("8_2robf")
+
+[node name="6" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 587.0
+offset_top = 160.0
+offset_right = 608.0
+offset_bottom = 181.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="Line2D" type="Line2D" parent="System/PuzzleController"]
+
 [node name="Opdracht2" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -213,63 +276,6 @@ offset_top = 30.0
 offset_right = 1012.0
 offset_bottom = 80.0
 text = "x"
-
-[node name="PuzzleController" type="Node2D" parent="."]
-script = ExtResource("7_7xh3p")
-
-[node name="1" type="Button" parent="PuzzleController" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 400.0
-offset_top = 140.0
-offset_right = 557.0
-offset_bottom = 192.0
-script = ExtResource("8_2robf")
-id = "1"
-
-[node name="2" type="Button" parent="PuzzleController" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 401.0
-offset_top = 192.0
-offset_right = 558.0
-offset_bottom = 244.0
-script = ExtResource("8_2robf")
-id = "2"
-
-[node name="3" type="Button" parent="PuzzleController" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 400.0
-offset_top = 244.0
-offset_right = 557.0
-offset_bottom = 296.0
-script = ExtResource("8_2robf")
-id = "3"
-
-[node name="4" type="Button" parent="PuzzleController" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 399.0
-offset_top = 298.0
-offset_right = 556.0
-offset_bottom = 350.0
-script = ExtResource("8_2robf")
-id = "4"
-
-[node name="5" type="Button" parent="PuzzleController" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 400.0
-offset_top = 349.0
-offset_right = 557.0
-offset_bottom = 401.0
-script = ExtResource("8_2robf")
-
-[node name="6" type="Button" parent="PuzzleController" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 401.0
-offset_top = 404.0
-offset_right = 558.0
-offset_bottom = 456.0
-script = ExtResource("8_2robf")
-
-[node name="Line2D" type="Line2D" parent="PuzzleController"]
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="ShowOpdracht" to="." method="_on_show_opdracht_pressed"]

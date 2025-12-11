@@ -16,24 +16,34 @@ texture = ExtResource("1_5duye")
 [node name="Labels" type="Node2D" parent="."]
 
 [node name="room1" type="Label" parent="Labels"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 12.0
+offset_top = 277.0
+offset_right = 392.0
+offset_bottom = 346.0
 
 [node name="room2" type="Label" parent="Labels"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 409.0
+offset_top = 276.0
+offset_right = 741.0
+offset_bottom = 322.0
 
 [node name="room3" type="Label" parent="Labels"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 790.0
+offset_top = 282.0
+offset_right = 1128.0
+offset_bottom = 328.0
 
 [node name="room4" type="Label" parent="Labels"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 220.0
+offset_top = 572.0
+offset_right = 568.0
+offset_bottom = 595.0
 
 [node name="room5" type="Label" parent="Labels"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 624.0
+offset_top = 569.0
+offset_right = 961.0
+offset_bottom = 592.0
 
 [node name="Total" type="Label" parent="."]
 layout_mode = 0

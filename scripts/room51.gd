@@ -1,4 +1,5 @@
 extends Control
+@onready var instructions: Panel = $Instructions
 
 
 var start_time = 0
@@ -12,30 +13,10 @@ func _ready():
 	var dialogue_res = preload("res://dialogue/dialogueroom51.dialogue")
 	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 
-	$informatie51.visible = false
-	$hideinformatie51.visible = false
+	instructions.visible = false
 	
 func _process(delta):
 	Events.rooms["room5"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
-
-
-
-# --- Informatie 51 ---
-func _on_show_informatie_51():
-	$informatie51.visible = true
-	$hideinformatie51.visible = true
-
-	# LineEdit moet verdwijnen
-	$antwoord51.visible = false
-
-
-func _on_hide_informatie_51():
-	$informatie51.visible = false
-	$hideinformatie51.visible = false
-
-	# LineEdit komt terug
-	$antwoord51.visible = true
-
 
 
 # --- Codecontrole ---
@@ -48,3 +29,12 @@ func _on_antwoord_51_text_submitted(password: String) -> void:
 	else:
 		TimeTracker.end_scene()
 		get_tree().change_scene_to_file("res://scenes/room52.tscn")
+
+
+func _on_showinformatie_51_pressed() -> void:
+	instructions.visible = true
+
+
+
+func _on_hide_instructions_pressed() -> void:
+	instructions.visible = false

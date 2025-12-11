@@ -1,5 +1,6 @@
 extends Control
 
+@onready var instructions: Node2D = $Instructions
 
 var codes := ["70"]  # juiste antwoorden als strings
 var start_time = 0
@@ -43,3 +44,12 @@ func _on_antwoordinvullen_text_submitted(new_text: String) -> void:
 		$antwoordinvullen.clear()  # leegmaken bij fout antwoord
 	else:
 		get_tree().change_scene_to_file("res://scenes/room4.tscn")
+
+
+func _on_q_10_pressed() -> void:
+	instructions.visible = true
+
+
+func _on_hideq_10_pressed() -> void:
+	instructions.visible = false
+	

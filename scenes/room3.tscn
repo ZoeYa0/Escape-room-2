@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbjouylrbq1s8"]
+[gd_scene load_steps=16 format=3 uid="uid://cbjouylrbq1s8"]
 
 [ext_resource type="Script" uid="uid://tfsfn33tq7a1" path="res://scripts/room3.gd" id="1_4aq8u"]
 [ext_resource type="Texture2D" uid="uid://c2i5iyjbht7sw" path="res://images/achtergrond3.png" id="1_j3vgb"]
+[ext_resource type="Texture2D" uid="uid://byoj2ogsjgcr3" path="res://images/3.png" id="4_op2f5"]
+[ext_resource type="Texture2D" uid="uid://dc4kxnjt6lmwj" path="res://images/q10.png" id="5_17neo"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="6_ggopl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bcdn3"]
@@ -24,32 +26,40 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iaiwk"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3r3bf"]
-load_path = "res://.godot/imported/q10uitleg.png-3d25c5702e1942771034a01f28d2dc50.ctex"
-
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_4aq8u")
 
 [node name="achtergrond3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(579, 290)
 scale = Vector2(1.5234479, 1.2702464)
 texture = ExtResource("1_j3vgb")
 
-[node name="hideq10" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1012.0
-offset_top = 90.0
-offset_right = 1092.0
-offset_bottom = 158.0
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(582, 299)
+scale = Vector2(1.5316204, 1.3802817)
+texture = ExtResource("4_op2f5")
 
-[node name="ShowHint" type="Button" parent="."]
+[node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 240.0
-offset_right = 454.0
-offset_bottom = 291.0
+offset_left = 257.0
+offset_top = 247.0
+offset_right = 460.0
+offset_bottom = 298.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bcdn3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kk34u")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iompt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_whsl6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0xfje")
+
+[node name="Q10" type="Button" parent="." groups=["Buttons"]]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 28.0
+offset_right = 458.0
+offset_bottom = 151.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bcdn3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_kk34u")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_iompt")
@@ -58,12 +68,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_0xfje")
 
 [node name="antwoordinvullen" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 521.0
-offset_top = 286.0
-offset_right = 863.0
-offset_bottom = 327.0
+offset_left = 532.0
+offset_top = 246.0
+offset_right = 874.0
+offset_bottom = 287.0
 
-[node name="showantwoordinvullen" type="Button" parent="."]
+[node name="showantwoordinvullen" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 696.0
 offset_top = 406.0
@@ -85,11 +95,22 @@ offset_bottom = 23.0
 visible = false
 position = Vector2(4, -3)
 
-[node name="Q10Uitleg" type="Sprite2D" parent="."]
-position = Vector2(630.75, 149.25)
-scale = Vector2(0.9004758, 0.67426276)
-texture = SubResource("CompressedTexture2D_3r3bf")
+[node name="Instructions" type="Node2D" parent="."]
+visible = false
+
+[node name="Q11" type="Sprite2D" parent="Instructions"]
+position = Vector2(597.4828, 187.3125)
+scale = Vector2(0.8026138, 0.80261385)
+texture = ExtResource("5_17neo")
+
+[node name="hideq10" type="Button" parent="Instructions" groups=["Buttons"]]
+offset_left = 1010.0
+offset_top = 63.0
+offset_right = 1081.0
+offset_bottom = 124.0
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
+[connection signal="pressed" from="Q10" to="." method="_on_q_10_pressed"]
 [connection signal="text_submitted" from="antwoordinvullen" to="." method="_on_antwoordinvullen_text_submitted"]
 [connection signal="pressed" from="showantwoordinvullen" to="." method="_on_showantwoordinvullen_pressed"]
+[connection signal="pressed" from="Instructions/hideq10" to="." method="_on_hideq_10_pressed"]
