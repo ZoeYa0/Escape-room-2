@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://citwuq3dnmiat"
+path="res://.godot/imported/noisy-ventilation-fan-61273 (2).mp3-d21d05795a3d315ee6aed2e4be02472f.mp3str"
+
+[deps]
+
+source_file="res://audio/noisy-ventilation-fan-61273 (2).mp3"
+dest_files=["res://.godot/imported/noisy-ventilation-fan-61273 (2).mp3-d21d05795a3d315ee6aed2e4be02472f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

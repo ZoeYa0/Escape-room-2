@@ -4,6 +4,7 @@ extends Button
 
 func _ready():
 	pressed.connect(_on_pressed)
+	id = name
 
 func _on_pressed():
 	var controller = get_tree().get_first_node_in_group("puzzle_controller")

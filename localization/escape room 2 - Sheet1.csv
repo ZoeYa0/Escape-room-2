@@ -11,8 +11,8 @@ HINTS_4.1,"De tegels waar je op mag staan, zijn de tegels waarvan het getal op d
 HINTS_4.2,"Voorbeeld van een goede tegel is: 15, want 3*5"
 HINTS_5.1,Je moet goed kijken naar de temperaturen en de eigenschappen van de genoemde eiwitten.
 HINTS_5.2,"Antwoord van een actief eiwit: B, want wordt beschermd bij extreme hitte en bij vriespunten. Dus eerste deel code is 37."
-HINTS_5.3,Ook hier moet je goed kijken naar de gekregen informatie over de chemische en biologische analyse en dit dan goed zien te koppelen aan de juiste vingerafdrukken.
-HINTS_5.4,Veel stress is een belangrijk detail.
+HINTS_5.3,377459
+HINTS_5.4,Veel stress is een belangrijk detail. Ook hier moet je goed kijken naar de gekregen informatie over de chemische en biologische analyse en dit dan goed zien te koppelen aan de juiste vingerafdrukken.
 HINTS_5.5,Afdruk C bevat veel stresszweet
 HINTS_5.6,index is dus 03 en soms extra detail 12 dus de code is 0312
 UI_SCORE,Tijd: {time} | Fouten: {wrong} | Hints: {hints}

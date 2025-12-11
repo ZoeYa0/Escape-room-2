@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cmi3ev12vp0jv"
+path="res://.godot/imported/2_no_power.dialogue-d1fd49ecea5f530e9558a29d7e0ee70b.tres"
+
+[deps]
+
+source_file="res://dialogue/2_no_power.dialogue"
+dest_files=["res://.godot/imported/2_no_power.dialogue-d1fd49ecea5f530e9558a29d7e0ee70b.tres"]
+
+[params]
+
+defaults=true

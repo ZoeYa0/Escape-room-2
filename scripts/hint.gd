@@ -3,10 +3,12 @@ extends Node2D
 @onready var hide_hint: Button = $HideHint
 @onready var label: Label = $Label
 @onready var actual_hint: Label = $ActualHint
+@onready var _2_answer: Sprite2D = $"2Answer"
 
 
 func _on_show_hint_pressed() -> void:
 	visible = true
+	_2_answer.visible = false
 	match Events.current_room:
 		1:
 			Events.rooms["room1"]["hints"] += 1
@@ -16,7 +18,8 @@ func _on_show_hint_pressed() -> void:
 				2:
 					actual_hint.text = tr("HINTS_1.2")
 		2:
-			Events.rooms["room2"]["hints"] += 1
+			if Events.rooms["room2"]["hints"] < 3:
+				Events.rooms["room2"]["hints"] += 1
 			match Events.rooms["room2"]["hints"]:
 				1:
 					actual_hint.text = tr("HINTS_2.1")
@@ -41,14 +44,18 @@ func _on_show_hint_pressed() -> void:
 				2:
 					actual_hint.text = tr("HINTS_4.2")
 		5:
-			Events.rooms["room5"]["hints"] += 1
+			if Events.room5_part2 == false and Events.rooms["room5"]["hints"] < 3:
+				Events.rooms["room5"]["hints"] += 1
+			elif Events.room5_part2:
+				Events.rooms["room5"]["hints"] += 1
 			match Events.rooms["room5"]["hints"]:
+				
 				1:
 					actual_hint.text = tr("HINTS_5.1")
 				2:
 					actual_hint.text = tr("HINTS_5.2")
 				3:
-					actual_hint.text = tr("HINTS_5.3")
+						actual_hint.text = tr("HINTS_5.3")
 				4:
 					actual_hint.text = tr("HINTS_5.4")
 				5:

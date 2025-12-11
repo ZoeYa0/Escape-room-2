@@ -1,9 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://cu365x7u0grxb"]
+[gd_scene load_steps=21 format=3 uid="uid://cu365x7u0grxb"]
 
 [ext_resource type="Texture2D" uid="uid://bquqgsei7vgig" path="res://images/achtergrond51.png" id="1_eihe4"]
 [ext_resource type="Script" uid="uid://lkqlsrfw5ees" path="res://scripts/room51.gd" id="1_sf8l2"]
+[ext_resource type="Texture2D" uid="uid://bwixfdr6ingbd" path="res://images/55.png" id="3_v8yog"]
 [ext_resource type="Texture2D" uid="uid://c0kq8cuvie6rj" path="res://images/vraag51.png" id="5_7x3v8"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="5_ishgb"]
+[ext_resource type="AudioStream" uid="uid://c35rwl7wtuxg4" path="res://audio/lasers.mp3" id="5_v8yog"]
+[ext_resource type="Texture2D" uid="uid://blep7knj4hbth" path="res://images/vraag52.png" id="6_v8yog"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ughih"]
 
@@ -27,21 +30,26 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlcbn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwrhy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwrfx"]
 bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Theme" id="Theme_ughih"]
-Panel/styles/panel = SubResource("StyleBoxFlat_qwrhy")
+Panel/styles/panel = SubResource("StyleBoxFlat_lwrfx")
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_sf8l2")
 
-[node name="achtergrond51" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 position = Vector2(574.12506, 323)
 scale = Vector2(1.2076802, 1.2)
 texture = ExtResource("1_eihe4")
+
+[node name="bg2" type="Sprite2D" parent="."]
+position = Vector2(534.5, 371.5)
+scale = Vector2(0.7214044, 0.6196868)
+texture = ExtResource("3_v8yog")
 
 [node name="hint51" type="Sprite2D" parent="."]
 visible = false
@@ -104,6 +112,11 @@ position = Vector2(521.25, 304.75)
 scale = Vector2(1.1961498, 1.1876155)
 texture = ExtResource("5_7x3v8")
 
+[node name="informatie52" type="Sprite2D" parent="Instructions"]
+position = Vector2(523, 306.00003)
+scale = Vector2(1.20251, 1.19593)
+texture = ExtResource("6_v8yog")
+
 [node name="HideInstructions" type="Button" parent="Instructions" groups=["Buttons"]]
 layout_mode = 0
 offset_left = 993.0
@@ -111,7 +124,19 @@ offset_top = 1.0
 offset_right = 1080.0
 offset_bottom = 76.0
 
+[node name="Lasers" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_v8yog")
+
+[node name="antwoord52" type="LineEdit" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 363.0
+offset_top = 498.0
+offset_right = 722.0
+offset_bottom = 547.0
+
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="showinformatie51" to="." method="_on_showinformatie_51_pressed"]
 [connection signal="text_submitted" from="antwoord51" to="." method="_on_antwoord_51_text_submitted"]
 [connection signal="pressed" from="Instructions/HideInstructions" to="." method="_on_hide_instructions_pressed"]
+[connection signal="text_submitted" from="antwoord52" to="." method="_on_antwoord_52_text_submitted"]

@@ -1,15 +1,16 @@
-[gd_scene load_steps=26 format=3 uid="uid://7ivaxx0cbx40"]
+[gd_scene load_steps=29 format=3 uid="uid://7ivaxx0cbx40"]
 
 [ext_resource type="Script" uid="uid://whw2je2lx36x" path="res://scripts/room2.gd" id="1_d3uvb"]
 [ext_resource type="Texture2D" uid="uid://dk3cnf7ar3htb" path="res://images/achtergrond2.png" id="1_klc7l"]
 [ext_resource type="Resource" uid="uid://bmjkiae61vnxa" path="res://dialogue/2_ending.dialogue" id="2_2robf"]
-[ext_resource type="Resource" uid="uid://cmi3ev12vp0jv" path="res://localization/2_no_power.dialogue" id="3_c7xmq"]
+[ext_resource type="Resource" uid="uid://cmi3ev12vp0jv" path="res://dialogue/2_no_power.dialogue" id="3_c7xmq"]
 [ext_resource type="Texture2D" uid="uid://didhv6djdccc6" path="res://images/2_dead.png" id="3_duage"]
 [ext_resource type="Texture2D" uid="uid://b3ynv2s4svs02" path="res://images/2_alive.png" id="4_ucjjd"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="4_yfplu"]
 [ext_resource type="Texture2D" uid="uid://1r3jlcdp0obq" path="res://images/2_system.png" id="6_duage"]
 [ext_resource type="Script" uid="uid://ccaw4syvwigr4" path="res://scripts/puzzle_controller.gd" id="7_7xh3p"]
 [ext_resource type="Script" uid="uid://rqp2u4q2gia5" path="res://scripts/system_parts.gd" id="8_2robf"]
+[ext_resource type="AudioStream" uid="uid://4mmmpcy4jio5" path="res://audio/security-alarm.mp3" id="11_olrvt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yfplu"]
 
@@ -40,11 +41,17 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="Theme" id="Theme_yfplu"]
 Panel/styles/panel = SubResource("StyleBoxFlat_7xh3p")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2robf"]
-bg_color = Color(0.9701547, 0.812877, 0.9012742, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7xmq"]
+bg_color = Color(0.95980245, 0.83104914, 0.8036309, 1)
 
-[sub_resource type="Theme" id="Theme_duage"]
-Panel/styles/panel = SubResource("StyleBoxFlat_2robf")
+[sub_resource type="Theme" id="Theme_olrvt"]
+Panel/styles/panel = SubResource("StyleBoxFlat_c7xmq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wf3f"]
+bg_color = Color(0.9634381, 0.85545963, 0.56291026, 1)
+
+[sub_resource type="Theme" id="Theme_dwq2r"]
+Panel/styles/panel = SubResource("StyleBoxFlat_5wf3f")
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -94,6 +101,30 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_c7xmq")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_olrvt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5wf3f")
 
+[node name="ShowAlarm" type="Button" parent="." groups=["Buttons"]]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 218.0
+offset_right = 279.0
+offset_bottom = 352.0
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dbehi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c7xmq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_olrvt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5wf3f")
+text = "Lees instructie vor alarm hier"
+
+[node name="Arrow" type="Button" parent="." groups=["Buttons"]]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 258.0
+offset_right = 193.0
+offset_bottom = 344.0
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dbehi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c7xmq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_olrvt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5wf3f")
+text = "Volgende kamer "
+
 [node name="Hint" parent="." instance=ExtResource("4_yfplu")]
 visible = false
 
@@ -114,6 +145,7 @@ offset_bottom = 638.0
 theme_override_styles/read_only = SubResource("StyleBoxFlat_oibp2")
 
 [node name="System" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 55.0
 offset_top = 16.0
@@ -122,23 +154,20 @@ offset_bottom = 628.0
 size_flags_vertical = 4
 theme = SubResource("Theme_yfplu")
 
-[node name="InnerBox" type="Panel" parent="System"]
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
+[node name="ColorRect" type="ColorRect" parent="System"]
+layout_mode = 0
 offset_left = 17.0
-offset_top = 11.0
-offset_right = 1031.0
+offset_top = 12.0
+offset_right = 1030.0
 offset_bottom = 602.0
-grow_horizontal = 2
-theme = SubResource("Theme_duage")
+color = Color(0.6577177, 0.9086637, 0.93336076, 1)
 
-[node name="Description" type="Label" parent="System/InnerBox"]
+[node name="Description" type="Label" parent="System/ColorRect"]
 layout_mode = 0
 offset_left = 51.0
-offset_top = 45.0
+offset_top = 44.0
 offset_right = 290.0
-offset_bottom = 569.0
+offset_bottom = 568.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = " Jullie moeten de juiste draden verbinden zodat het systeembord sterke en irritante geluid geeft zodra de aan-knop wordt ingedrukt én de juiste spanning wordt doorgestuurd. 
@@ -147,8 +176,8 @@ We zijn vandaag heel lief, dus één hint krijgen jullie alvast: er worden maar 
 De rest moeten jullie zelf uitvogelen… "
 autowrap_mode = 2
 
-[node name="2System" type="Sprite2D" parent="System/InnerBox"]
-position = Vector2(652, 287)
+[node name="2System" type="Sprite2D" parent="System/ColorRect"]
+position = Vector2(652, 286)
 scale = Vector2(0.7612967, 0.7612967)
 texture = ExtResource("6_duage")
 
@@ -193,20 +222,21 @@ id = "3"
 
 [node name="4" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 523.0
-offset_top = 316.0
-offset_right = 538.0
-offset_bottom = 333.0
+offset_left = 524.0
+offset_top = 368.0
+offset_right = 539.0
+offset_bottom = 385.0
 script = ExtResource("8_2robf")
 id = "4"
 
 [node name="5" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 523.0
-offset_top = 368.0
-offset_right = 540.0
-offset_bottom = 386.0
+offset_left = 524.0
+offset_top = 419.0
+offset_right = 541.0
+offset_bottom = 437.0
 script = ExtResource("8_2robf")
+id = "5"
 
 [node name="6" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
@@ -217,7 +247,254 @@ offset_bottom = 181.0
 script = ExtResource("8_2robf")
 id = "6"
 
+[node name="7" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 588.0
+offset_top = 265.0
+offset_right = 609.0
+offset_bottom = 286.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="8" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 588.0
+offset_top = 316.0
+offset_right = 609.0
+offset_bottom = 337.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="9" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 586.0
+offset_top = 367.0
+offset_right = 607.0
+offset_bottom = 388.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="10" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 587.0
+offset_top = 421.0
+offset_right = 608.0
+offset_bottom = 442.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="11" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 588.0
+offset_top = 474.0
+offset_right = 609.0
+offset_bottom = 495.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="12" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 690.0
+offset_top = 167.0
+offset_right = 711.0
+offset_bottom = 188.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="13" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 690.0
+offset_top = 288.0
+offset_right = 711.0
+offset_bottom = 309.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="14" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 689.0
+offset_top = 392.0
+offset_right = 710.0
+offset_bottom = 413.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="15" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 691.0
+offset_top = 471.0
+offset_right = 712.0
+offset_bottom = 492.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="16" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 744.0
+offset_top = 158.0
+offset_right = 765.0
+offset_bottom = 179.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="17" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 742.0
+offset_top = 260.0
+offset_right = 763.0
+offset_bottom = 281.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="18" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 741.0
+offset_top = 313.0
+offset_right = 762.0
+offset_bottom = 334.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="19" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 740.0
+offset_top = 366.0
+offset_right = 761.0
+offset_bottom = 387.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="20" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 743.0
+offset_top = 418.0
+offset_right = 764.0
+offset_bottom = 439.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="21" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 742.0
+offset_top = 472.0
+offset_right = 763.0
+offset_bottom = 493.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="22" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 846.0
+offset_top = 167.0
+offset_right = 867.0
+offset_bottom = 188.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="23" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 848.0
+offset_top = 289.0
+offset_right = 869.0
+offset_bottom = 310.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="24" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 846.0
+offset_top = 393.0
+offset_right = 867.0
+offset_bottom = 414.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="25" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 849.0
+offset_top = 472.0
+offset_right = 870.0
+offset_bottom = 493.0
+script = ExtResource("8_2robf")
+id = "6"
+
+[node name="26" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 909.0
+offset_top = 473.0
+offset_right = 930.0
+offset_bottom = 494.0
+script = ExtResource("8_2robf")
+id = "6"
+
 [node name="Line2D" type="Line2D" parent="System/PuzzleController"]
+
+[node name="ColorRect" type="ColorRect" parent="System/PuzzleController"]
+offset_left = 578.0
+offset_top = 258.0
+offset_right = 718.0
+offset_bottom = 347.0
+color = Color(0.827451, 0.827451, 0.827451, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="System/PuzzleController"]
+offset_left = 408.0
+offset_top = 305.0
+offset_right = 548.0
+offset_bottom = 346.0
+color = Color(0.827451, 0.827451, 0.827451, 1)
+
+[node name="InstructionAlarm" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 57.0
+offset_top = 18.0
+offset_right = 1107.0
+offset_bottom = 630.0
+size_flags_vertical = 4
+theme = SubResource("Theme_yfplu")
+
+[node name="InnerBox" type="Panel" parent="InstructionAlarm"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 17.0
+offset_top = 11.0
+offset_right = 1031.0
+offset_bottom = 602.0
+grow_horizontal = 2
+theme = SubResource("Theme_olrvt")
+
+[node name="Description" type="RichTextLabel" parent="InstructionAlarm/InnerBox"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 85.0
+offset_right = 959.0
+offset_bottom = 558.0
+theme_override_colors/default_color = Color(0.25094253, 0.17160389, 0, 1)
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+bbcode_enabled = true
+text = "Eerst moeten jullie de [b]drukschakelaar[/b] gebruiken om het systeembord überhaupt aan te zetten. Daarnaast is er nog iets interessants: de [b]comparator.[/b] Deze meet de spanning, en als de ingevoerde spanning lager is dan de ingestelde spanning op de comparator, zal het systeembord niet werken. (Deze moeten jullie dus ook correct verbinden.) 
+
+Bedenk tot slot dat er pas geluid klinkt wanneer beide onderdelen samenwerken: de schakelaar is ingedrukt én de comparator ontvangt dezelfde spanning als de invoer. Gebruik je hersenpower, succes!!!"
+autowrap_mode = 2
+
+[node name="Title" type="Label" parent="InstructionAlarm/InnerBox"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 29.0
+offset_right = 552.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 24
+text = "Opdracht"
+
+[node name="HideAlarm" type="Button" parent="InstructionAlarm" groups=["Buttons"]]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 30.0
+offset_right = 1012.0
+offset_bottom = 80.0
+text = "x"
 
 [node name="Opdracht2" type="Panel" parent="."]
 visible = false
@@ -238,7 +515,7 @@ offset_top = 11.0
 offset_right = 1031.0
 offset_bottom = 602.0
 grow_horizontal = 2
-theme = SubResource("Theme_duage")
+theme = SubResource("Theme_dwq2r")
 
 [node name="Description" type="Label" parent="Opdracht2/InnerBox"]
 layout_mode = 0
@@ -277,9 +554,15 @@ offset_right = 1012.0
 offset_bottom = 80.0
 text = "x"
 
+[node name="SecurityAlarm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_olrvt")
+
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="ShowOpdracht" to="." method="_on_show_opdracht_pressed"]
+[connection signal="pressed" from="ShowAlarm" to="." method="_on_show_alarm_pressed"]
+[connection signal="pressed" from="Arrow" to="." method="_on_arrow_pressed"]
 [connection signal="pressed" from="Alarm" to="." method="_on_alarm_pressed"]
 [connection signal="text_submitted" from="AnswerField" to="." method="_on_answer_field_text_submitted"]
 [connection signal="pressed" from="System/HideSystem" to="." method="_on_hide_system_pressed"]
+[connection signal="pressed" from="InstructionAlarm/HideAlarm" to="." method="_on_hide_alarm_pressed"]
 [connection signal="pressed" from="Opdracht2/HideOpdracht" to="." method="_on_hide_opdracht_pressed"]

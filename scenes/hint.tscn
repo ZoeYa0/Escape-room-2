@@ -10,7 +10,7 @@ script = ExtResource("1_lsscw")
 offset_left = 67.0
 offset_top = 35.0
 offset_right = 1075.0
-offset_bottom = 247.0
+offset_bottom = 270.0
 color = Color(0.83033526, 0.8303351, 0.8303353, 1)
 
 [node name="HideHint" type="Button" parent="." groups=["Buttons"]]
@@ -28,17 +28,18 @@ offset_bottom = 102.0
 text = "Hint"
 
 [node name="ActualHint" type="Label" parent="."]
-offset_left = 162.0
-offset_top = 115.0
-offset_right = 994.0
-offset_bottom = 209.0
+offset_left = 142.0
+offset_top = 119.0
+offset_right = 974.0
+offset_bottom = 213.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 20
 text = "hint itn"
+autowrap_mode = 2
 
 [node name="2Answer" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(604, 359)
+position = Vector2(572, 289)
+scale = Vector2(0.7213394, 0.66569203)
 texture = ExtResource("2_grpcu")
 
 [connection signal="pressed" from="HideHint" to="." method="_on_hide_hint_pressed"]

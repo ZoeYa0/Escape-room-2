@@ -7,8 +7,10 @@ var connections_made := {}
 var offset = Vector2(5.0,5.0)
 
 const SOLUTIONS = {
-	"1": "2",
-	"2": "6"
+	"5": "6",
+	"4": "18",
+	"12": "17",
+	"23": "26"
 }
 
 func _ready():
@@ -52,7 +54,7 @@ func _try_connect(a: Button, b: Button):
 		print("Correct connection:", id1, "->", id2)
 
 		connections_made[id1] = id2
-		#connections_made[id2] = id1
+		connections_made[id2] = id1
 
 		_draw_wire(a.global_position+offset, b.global_position+offset)
 
