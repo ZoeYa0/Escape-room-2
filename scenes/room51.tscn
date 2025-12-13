@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cu365x7u0grxb"]
+[gd_scene load_steps=23 format=3 uid="uid://cu365x7u0grxb"]
 
 [ext_resource type="Texture2D" uid="uid://bquqgsei7vgig" path="res://images/achtergrond51.png" id="1_eihe4"]
 [ext_resource type="Script" uid="uid://lkqlsrfw5ees" path="res://scripts/room51.gd" id="1_sf8l2"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="5_ishgb"]
 [ext_resource type="AudioStream" uid="uid://c35rwl7wtuxg4" path="res://audio/lasers.mp3" id="5_v8yog"]
 [ext_resource type="Texture2D" uid="uid://blep7knj4hbth" path="res://images/vraag52.png" id="6_v8yog"]
+[ext_resource type="AudioStream" uid="uid://b4hhbu0p2y1e2" path="res://audio/rightanswer-95219 2.mp3" id="8_moh3v"]
+[ext_resource type="AudioStream" uid="uid://dbeep1x6e8pca" path="res://audio/wronganswer-37702.mp3" id="9_23o8h"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ughih"]
 
@@ -97,6 +99,17 @@ offset_bottom = 23.0
 [node name="Hint" parent="." instance=ExtResource("5_ishgb")]
 visible = false
 
+[node name="Lasers" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_v8yog")
+
+[node name="antwoord52" type="LineEdit" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 363.0
+offset_top = 498.0
+offset_right = 722.0
+offset_bottom = 547.0
+
 [node name="Instructions" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -124,19 +137,17 @@ offset_top = 1.0
 offset_right = 1080.0
 offset_bottom = 76.0
 
-[node name="Lasers" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_v8yog")
+[node name="Audio" type="Node2D" parent="."]
+position = Vector2(55, 16)
 
-[node name="antwoord52" type="LineEdit" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 363.0
-offset_top = 498.0
-offset_right = 722.0
-offset_bottom = 547.0
+[node name="Rightanswer952192" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("8_moh3v")
+
+[node name="Wronganswer37702" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("9_23o8h")
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="showinformatie51" to="." method="_on_showinformatie_51_pressed"]
 [connection signal="text_submitted" from="antwoord51" to="." method="_on_antwoord_51_text_submitted"]
-[connection signal="pressed" from="Instructions/HideInstructions" to="." method="_on_hide_instructions_pressed"]
 [connection signal="text_submitted" from="antwoord52" to="." method="_on_antwoord_52_text_submitted"]
+[connection signal="pressed" from="Instructions/HideInstructions" to="." method="_on_hide_instructions_pressed"]

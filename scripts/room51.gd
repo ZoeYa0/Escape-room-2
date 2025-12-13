@@ -14,7 +14,8 @@ extends Control
 @onready var lasers: AudioStreamPlayer = $Lasers
 @onready var antwoord_52: LineEdit = $antwoord52
 
-
+@onready var rightanswer_952192: AudioStreamPlayer = $Audio/Rightanswer952192
+@onready var wronganswer_37702: AudioStreamPlayer = $Audio/Wronganswer37702
 
 var start_time = 0
 func _ready():
@@ -57,9 +58,11 @@ func _on_antwoord_51_text_submitted(password: String) -> void:
 func _on_antwoord_52_text_submitted(password: String) -> void:
 	if password not in code_2:
 		$antwoord52.clear()
+		Events.rooms["room5"]["wrong"] +=1
+		wronganswer_37702.play()
 		return
 	else:
-		TimeTracker.end_scene()
+		rightanswer_952192.play()
 		get_tree().change_scene_to_file("res://scenes/room6.tscn")
 
 func _on_showinformatie_51_pressed() -> void:

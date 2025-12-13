@@ -5,6 +5,7 @@ var dragging := false
 var temp_line: Line2D
 var connections_made := {}
 var offset = Vector2(5.0,5.0)
+@onready var rightanswer_952192: AudioStreamPlayer = $"../../Audio/Rightanswer952192"
 
 const SOLUTIONS = {
 	"5": "6",
@@ -57,7 +58,8 @@ func _try_connect(a: Button, b: Button):
 		connections_made[id2] = id1
 
 		_draw_wire(a.global_position+offset, b.global_position+offset)
-
+		#permanent wire
+		rightanswer_952192.play()
 		if _is_puzzle_solved():
 			print("🎉 PUZZLE SOLVED!")
 			puzzle_solved.emit()

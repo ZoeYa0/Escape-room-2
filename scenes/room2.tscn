@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://7ivaxx0cbx40"]
+[gd_scene load_steps=31 format=3 uid="uid://7ivaxx0cbx40"]
 
 [ext_resource type="Script" uid="uid://whw2je2lx36x" path="res://scripts/room2.gd" id="1_d3uvb"]
 [ext_resource type="Texture2D" uid="uid://dk3cnf7ar3htb" path="res://images/achtergrond2.png" id="1_klc7l"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://ccaw4syvwigr4" path="res://scripts/puzzle_controller.gd" id="7_7xh3p"]
 [ext_resource type="Script" uid="uid://rqp2u4q2gia5" path="res://scripts/system_parts.gd" id="8_2robf"]
 [ext_resource type="AudioStream" uid="uid://4mmmpcy4jio5" path="res://audio/security-alarm.mp3" id="11_olrvt"]
+[ext_resource type="AudioStream" uid="uid://b4hhbu0p2y1e2" path="res://audio/rightanswer-95219 2.mp3" id="12_dwq2r"]
+[ext_resource type="AudioStream" uid="uid://dbeep1x6e8pca" path="res://audio/wronganswer-37702.mp3" id="13_oibp2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yfplu"]
 
@@ -111,7 +113,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_dbehi")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_c7xmq")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_olrvt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5wf3f")
-text = "Lees instructie vor alarm hier"
+text = "Lees instructie voor alarm hier"
 
 [node name="Arrow" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
@@ -124,9 +126,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_c7xmq")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_olrvt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5wf3f")
 text = "Volgende kamer "
-
-[node name="Hint" parent="." instance=ExtResource("4_yfplu")]
-visible = false
 
 [node name="Alarm" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -534,7 +533,7 @@ Functieformule: y= 0,2 * x + 0,5
 -Y = de juiste spanning 
 -X = de berekende massa      
 
-Voer je antwoord in V:"
+Voer je antwoord in V."
 autowrap_mode = 2
 
 [node name="Title" type="Label" parent="Opdracht2/InnerBox"]
@@ -554,8 +553,19 @@ offset_right = 1012.0
 offset_bottom = 80.0
 text = "x"
 
-[node name="SecurityAlarm" type="AudioStreamPlayer" parent="."]
+[node name="Hint" parent="." instance=ExtResource("4_yfplu")]
+visible = false
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="SecurityAlarm" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("11_olrvt")
+
+[node name="Rightanswer952192" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_dwq2r")
+
+[node name="Wronganswer37702" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_oibp2")
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="ShowOpdracht" to="." method="_on_show_opdracht_pressed"]

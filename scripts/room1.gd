@@ -12,12 +12,15 @@ extends Node2D
 @onready var hide_opdracht: Button = $Opdracht/HideOpdracht
 @onready var _1_table: Sprite2D = $"Opdracht/1Table"
 
+const RIGHTANSWER_95219_2 = preload("uid://b4hhbu0p2y1e2")#no duh you're importing from files
+const WRONGANSWER_37702 = preload("uid://dbeep1x6e8pca")
 
 
 
 var start_time = 0
 var dialogue_res = preload("res://dialogue/dialogueroom1.dialogue")
 @export var ending: DialogueResource
+@export var ventilation: DialogueResource
 
 func _ready():
 	TranslationServer.set_locale("nl")
@@ -29,7 +32,7 @@ func _ready():
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
 
-	#DialogueManager.show_dialogue_balloon(dialogue_res, "start")
+	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 	hint.visible = false
 	
 	
@@ -44,8 +47,12 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	if new_text not in codes:
 		line_edit.clear()
 		Events.rooms["room1"]["wrong"] +=1
+		$AudioStreamPlayer2D.stream = WRONGANSWER_37702
+		$AudioStreamPlayer2D.play()
 		return
 	else:
+		$AudioStreamPlayer2D.stream = RIGHTANSWER_95219_2
+		$AudioStreamPlayer2D.play()
 		DialogueManager.show_dialogue_balloon(ending, "start")
 		
 
@@ -57,3 +64,7 @@ func _on_dialogue_ended(dialogue):
 	if dialogue == ending:
 		get_tree().change_scene_to_file("res://scenes/room2.tscn")
 	
+
+
+func _on_ventilation_pressed() -> void:
+	DialogueManager.show_dialogue_balloon(ventilation, "start")

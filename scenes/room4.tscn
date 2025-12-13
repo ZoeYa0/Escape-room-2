@@ -1,8 +1,11 @@
-[gd_scene load_steps=75 format=3 uid="uid://1sp7px3uiyoa"]
+[gd_scene load_steps=79 format=3 uid="uid://1sp7px3uiyoa"]
 
 [ext_resource type="Script" uid="uid://cpjed285bcogt" path="res://scripts/room4.gd" id="1_3j86r"]
 [ext_resource type="Texture2D" uid="uid://bph3aum82om02" path="res://images/achtergrond4.png" id="1_xadx6"]
+[ext_resource type="AudioStream" uid="uid://b4hhbu0p2y1e2" path="res://audio/rightanswer-95219 2.mp3" id="4_uv3hv"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="4_uwnbk"]
+[ext_resource type="AudioStream" uid="uid://dbeep1x6e8pca" path="res://audio/wronganswer-37702.mp3" id="5_eqdj1"]
+[ext_resource type="Script" uid="uid://wi82md03llxc" path="res://scripts/wrong_area.gd" id="6_eqdj1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uxnh"]
 
@@ -15,7 +18,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mfne7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0weu7"]
-load_path = "res://.godot/imported/vraag4.png-70d012bf588cc9c998cda8b47472b422.ctex"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgs0o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uv3hv"]
 
@@ -175,12 +179,14 @@ position = Vector2(593, 138)
 scale = Vector2(0.70142436, 0.65396345)
 texture = SubResource("CompressedTexture2D_0weu7")
 
-[node name="hidevraag4" type="Button" parent="."]
+[node name="WrongArea" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 980.0
-offset_top = 53.0
-offset_right = 1050.0
-offset_bottom = 111.0
+offset_left = 216.0
+offset_top = 427.0
+offset_right = 825.0
+offset_bottom = 651.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lgs0o")
+script = ExtResource("6_eqdj1")
 
 [node name="ShowHint" type="Button" parent="."]
 layout_mode = 0
@@ -194,7 +200,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_2rspr")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_y5pfl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_q6beh")
 
-[node name="getal1" type="Button" parent="."]
+[node name="getal1" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 441.0
 offset_top = 424.0
@@ -206,7 +212,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_cl5w0")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_dhxj8")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1ok7q")
 
-[node name="getal2" type="Button" parent="."]
+[node name="getal2" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 695.0
 offset_top = 425.0
@@ -218,7 +224,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_m1o1n")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_fumeg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mm2yy")
 
-[node name="getal3" type="Button" parent="."]
+[node name="getal3" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 337.0
 offset_top = 454.0
@@ -230,7 +236,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_u7xsw")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_m7svv")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lp7lu")
 
-[node name="getal4" type="Button" parent="."]
+[node name="getal4" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 505.0
 offset_top = 457.0
@@ -242,7 +248,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_dvftd")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_g25pi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1bahe")
 
-[node name="getal5" type="Button" parent="."]
+[node name="getal5" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 618.0
 offset_top = 457.0
@@ -254,7 +260,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_u0k1w")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_23sr7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yt0u6")
 
-[node name="getal6" type="Button" parent="."]
+[node name="getal6" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 735.0
 offset_top = 455.0
@@ -266,7 +272,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_vt5ml")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_olbua")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rnllb")
 
-[node name="getal7" type="Button" parent="."]
+[node name="getal7" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 368.0
 offset_top = 498.0
@@ -278,7 +284,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_qbgks")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ri40c")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_68upo")
 
-[node name="getal8" type="Button" parent="."]
+[node name="getal8" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 634.0
 offset_top = 499.0
@@ -290,7 +296,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_6xonw")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_2skeo")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jd5vj")
 
-[node name="getal9" type="Button" parent="."]
+[node name="getal9" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 477.0
 offset_top = 539.0
@@ -302,7 +308,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_cvkcl")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_iyix3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3801s")
 
-[node name="getal10" type="Button" parent="."]
+[node name="getal10" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 795.0
 offset_top = 533.0
@@ -314,7 +320,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_hx0j0")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_r8efd")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_630wk")
 
-[node name="getal11" type="Button" parent="."]
+[node name="getal11" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 274.0
 offset_top = 600.0
@@ -326,7 +332,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_mby0p")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_g8tmt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1c8vx")
 
-[node name="getal12" type="Button" parent="."]
+[node name="getal12" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
 offset_left = 834.0
 offset_top = 595.0
@@ -341,8 +347,17 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_j2a54")
 [node name="Hint" parent="." instance=ExtResource("4_uwnbk")]
 visible = false
 
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Rightanswer952192" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("4_uv3hv")
+
+[node name="Wronganswer37702" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_eqdj1")
+
 [connection signal="pressed" from="showvraag4" to="." method="_on_showvraag_4_pressed"]
-[connection signal="pressed" from="hidevraag4" to="." method="_on_hidevraag_4_pressed"]
+[connection signal="gui_input" from="WrongArea" to="." method="_on_wrong_area_gui_input"]
+[connection signal="gui_input" from="WrongArea" to="WrongArea" method="_on_gui_input"]
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="getal1" to="." method="_on_getal_1_pressed"]
 [connection signal="pressed" from="getal2" to="." method="_on_getal_2_pressed"]

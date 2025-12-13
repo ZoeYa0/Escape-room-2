@@ -1,6 +1,8 @@
 extends Control
 
 @onready var instructions: Node2D = $Instructions
+@onready var rightanswer_952192: AudioStreamPlayer = $Audio/Rightanswer952192
+@onready var wronganswer_37702: AudioStreamPlayer = $Audio/Wronganswer37702
 
 var codes := ["70"]  # juiste antwoorden als strings
 var start_time = 0
@@ -17,32 +19,19 @@ func _ready():
 	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 
 	
-func _process(delta):
+func _process(_delta):
 	Events.rooms["room3"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
-
-
-### --- q10 functies ---
-func _on_showq10_pressed():
-	$hideq10.visible = true
-	$q10.visible = true
-
-func _on_hideq10_pressed():
-	$hideq10.visible = false
-	$q10.visible = false
-
-
-### --- antwoordinvullen functie ---
-func _on_showantwoordinvullen_pressed():
-	$antwoordinvullen.visible = true
-	$antwoordinvullen.grab_focus()  # automatisch cursor erin zetten
 
 
 func _on_antwoordinvullen_text_submitted(new_text: String) -> void:
 	var antwoord = new_text.strip_edges()  # verwijder spaties voor/achter
 
 	if antwoord not in codes:
-		$antwoordinvullen.clear()  # leegmaken bij fout antwoord
+		$antwoordinvullen.clear()
+		wronganswer_37702.play()
+		Events.rooms["room3"]["wrong"] += 1
 	else:
+		rightanswer_952192.play()
 		get_tree().change_scene_to_file("res://scenes/room4.tscn")
 
 

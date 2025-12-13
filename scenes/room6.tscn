@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://ol4746xbjja4"]
+[gd_scene load_steps=7 format=3 uid="uid://ol4746xbjja4"]
 
-[ext_resource type="Texture2D" uid="uid://cb2ndqbsriv7a" path="res://images/achtergrond6.png" id="1_5duye"]
 [ext_resource type="Script" uid="uid://byremsrip5wtw" path="res://scripts/room6.gd" id="1_qv633"]
+[ext_resource type="Texture2D" uid="uid://wx3bsq5v6uu1" path="res://images/1.png" id="2_ihqqe"]
+[ext_resource type="Texture2D" uid="uid://byoj2ogsjgcr3" path="res://images/3.png" id="3_ppcy5"]
+[ext_resource type="Texture2D" uid="uid://dk3cnf7ar3htb" path="res://images/achtergrond2.png" id="4_61fb2"]
+[ext_resource type="Texture2D" uid="uid://bph3aum82om02" path="res://images/achtergrond4.png" id="5_dnee6"]
+[ext_resource type="Texture2D" uid="uid://bquqgsei7vgig" path="res://images/achtergrond51.png" id="6_uaxdy"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_qv633")
 
-[node name="achtergrond6" type="Sprite2D" parent="."]
-position = Vector2(576.75, 324.25)
-scale = Vector2(1.0335721, 1.0198098)
-texture = ExtResource("1_5duye")
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 646.0
+color = Color(0.9647059, 0.7764706, 0.6784314, 1)
 
 [node name="Labels" type="Node2D" parent="."]
 
@@ -34,29 +39,54 @@ offset_right = 1128.0
 offset_bottom = 328.0
 
 [node name="room4" type="Label" parent="Labels"]
-offset_left = 220.0
-offset_top = 572.0
-offset_right = 568.0
-offset_bottom = 595.0
+offset_left = 29.0
+offset_top = 556.0
+offset_right = 377.0
+offset_bottom = 579.0
 
 [node name="room5" type="Label" parent="Labels"]
-offset_left = 624.0
-offset_top = 569.0
-offset_right = 961.0
-offset_bottom = 592.0
+offset_left = 406.0
+offset_top = 559.0
+offset_right = 743.0
+offset_bottom = 582.0
 
 [node name="Total" type="Label" parent="."]
 layout_mode = 0
-offset_left = 5.0
+offset_left = 785.0
 offset_top = 359.0
-offset_right = 686.0
-offset_bottom = 539.0
+offset_right = 1118.0
+offset_bottom = 548.0
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 437.0
+offset_left = 413.0
 offset_top = 22.0
-offset_right = 727.0
-offset_bottom = 56.0
-theme_override_font_sizes/font_size = 23
+offset_right = 774.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 30
 text = "Bedankt voor het spelen!"
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(198.5, 173)
+scale = Vector2(0.18385416, 0.16319443)
+texture = ExtResource("2_ihqqe")
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(962.75, 172.5)
+scale = Vector2(0.4669749, 0.33626762)
+texture = ExtResource("3_ppcy5")
+
+[node name="Achtergrond2" type="Sprite2D" parent="."]
+position = Vector2(581.1667, 171.5)
+scale = Vector2(0.18420136, 0.16579862)
+texture = ExtResource("4_61fb2")
+
+[node name="Achtergrond4" type="Sprite2D" parent="."]
+position = Vector2(202.00002, 451)
+scale = Vector2(0.5032097, 0.4066524)
+texture = ExtResource("5_dnee6")
+
+[node name="Achtergrond51" type="Sprite2D" parent="."]
+position = Vector2(576.99994, 452.00003)
+scale = Vector2(0.36833856, 0.35555553)
+texture = ExtResource("6_uaxdy")

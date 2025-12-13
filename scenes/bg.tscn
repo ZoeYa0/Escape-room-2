@@ -5,3 +5,4 @@
 [node name="Bg" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_anprf")
 autoplay = true
+bus = &"bg"

@@ -20,7 +20,9 @@ extends Control
 @onready var show_alarm: Button = $ShowAlarm
 @onready var instruction_alarm: Panel = $InstructionAlarm
 @onready var arrow: Button = $Arrow
-@onready var security_alarm: AudioStreamPlayer = $SecurityAlarm
+@onready var security_alarm: AudioStreamPlayer = $Audio/SecurityAlarm
+@onready var rightanswer_952192: AudioStreamPlayer = $Audio/Rightanswer952192
+@onready var wronganswer_37702: AudioStreamPlayer = $Audio/Wronganswer37702
 
 var start_time = 0
 var power_on = false
@@ -57,6 +59,7 @@ func _on_answer_field_text_submitted(new_text: String) -> void:
 	if new_text not in codes:
 		answer_field.clear()
 		Events.rooms["room2"]["wrong"] += 1
+		wronganswer_37702.play()
 		return
 	else:
 		power_on = true

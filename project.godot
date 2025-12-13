@@ -38,7 +38,7 @@ puzzle_controller=""
 [internationalization]
 
 locale/translations=PackedStringArray("res://localization/escape room 2 - Sheet1.nl.translation")
-locale/translations_pot_files=PackedStringArray("res://dialogue/dialogueroom1.dialogue", "res://dialogue/dialogueroom2.dialogue", "res://dialogue/dialogueroom3.dialogue", "res://dialogue/dialogueroom4.dialogue", "res://dialogue/dialogueroom51.dialogue", "res://dialogue/dialogueroom52.dialogue", "res://dialogue/1_ending.dialogue", "res://dialogue/2_ending.dialogue", "res://localization/2_no_power.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/dialogueroom1.dialogue", "res://dialogue/dialogueroom2.dialogue", "res://dialogue/dialogueroom3.dialogue", "res://dialogue/dialogueroom4.dialogue", "res://dialogue/dialogueroom51.dialogue", "res://dialogue/dialogueroom52.dialogue", "res://dialogue/1_ending.dialogue", "res://dialogue/2_ending.dialogue", "res://dialogue/2_no_power.dialogue", "res://dialogue/1_ventilation.dialogue")
 locale/fallback="nl"
 
 [rendering]
