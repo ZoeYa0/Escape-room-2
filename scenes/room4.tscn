@@ -161,7 +161,7 @@ position = Vector2(576.75, 322.5)
 scale = Vector2(1.6535151, 1.3841202)
 texture = ExtResource("1_xadx6")
 
-[node name="showvraag4" type="Button" parent="."]
+[node name="ShowInstructions" type="Button" parent="."]
 layout_mode = 0
 offset_left = 423.0
 offset_top = 48.0
@@ -174,9 +174,8 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_5idlq")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mfne7")
 
 [node name="vraag4" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(593, 138)
-scale = Vector2(0.70142436, 0.65396345)
+position = Vector2(190.00003, 90)
+scale = Vector2(732.99994, 150)
 texture = SubResource("CompressedTexture2D_0weu7")
 
 [node name="WrongArea" type="Panel" parent="."]
@@ -355,8 +354,35 @@ stream = ExtResource("4_uv3hv")
 [node name="Wronganswer37702" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("5_eqdj1")
 
-[connection signal="pressed" from="showvraag4" to="." method="_on_showvraag_4_pressed"]
-[connection signal="gui_input" from="WrongArea" to="." method="_on_wrong_area_gui_input"]
+[node name="Instructions" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Instructions"]
+offset_left = 163.0
+offset_top = 50.0
+offset_right = 1027.0
+offset_bottom = 261.0
+color = Color(0.7254902, 0.7254902, 0.7254902, 1)
+
+[node name="hideq10" type="Button" parent="Instructions" groups=["Buttons"]]
+offset_left = 949.0
+offset_top = 63.0
+offset_right = 1011.0
+offset_bottom = 111.0
+text = "x"
+
+[node name="Label" type="Label" parent="Instructions"]
+offset_left = 273.0
+offset_top = 119.0
+offset_right = 913.0
+offset_bottom = 263.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "De Bloedtak is geobsedeerd door het getal 3 en vermenigvuldiging. Klik op alle meervouden van 3!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="ShowInstructions" to="." method="_on_show_instructions_pressed"]
 [connection signal="gui_input" from="WrongArea" to="WrongArea" method="_on_gui_input"]
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="getal1" to="." method="_on_getal_1_pressed"]
@@ -371,3 +397,4 @@ stream = ExtResource("5_eqdj1")
 [connection signal="pressed" from="getal10" to="." method="_on_getal_10_pressed"]
 [connection signal="pressed" from="getal11" to="." method="_on_getal_11_pressed"]
 [connection signal="pressed" from="getal12" to="." method="_on_getal_12_pressed"]
+[connection signal="pressed" from="Instructions/hideq10" to="." method="_on_hideq_10_pressed"]

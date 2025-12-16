@@ -6,10 +6,10 @@ uid="uid://bt63nsssi3pfm"
 
 [deps]
 
-files=["res://localization/escape room 2 - Sheet1.nl.translation"]
+files=["res://localization/escape room 2 - Sheet1.nl.translation", "res://localization/escape room 2 - Sheet1.en.translation"]
 
 source_file="res://localization/escape room 2 - Sheet1.csv"
-dest_files=["res://localization/escape room 2 - Sheet1.nl.translation"]
+dest_files=["res://localization/escape room 2 - Sheet1.nl.translation", "res://localization/escape room 2 - Sheet1.en.translation"]
 
 [params]
 

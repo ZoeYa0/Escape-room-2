@@ -1,8 +1,6 @@
 <a id="readme-top"></a>
 
-<!-- SHIELDS -->
-![Escaperoom Level 2 Badge](https://hackatime-badge.hackclub.com/U09D27K9XU5/escaperoom-level-2.svg)
-
+![Hackatime Badge](https://hackatime-badge.hackclub.com/U09D27K9XU5/escaperoom-level-2.svg)
 <!-- HEADER -->
 
 <!-- CONTENTS -->

@@ -10,7 +10,9 @@ extends Node2D
 @onready var line_edit: LineEdit = $Opdracht/InnerBox/LineEdit
 @onready var antwoord: Label = $Opdracht/InnerBox/Antwoord
 @onready var hide_opdracht: Button = $Opdracht/HideOpdracht
-@onready var _1_table: Sprite2D = $"Opdracht/1Table"
+@onready var instruction_label: Label = $Opdracht/InnerBox/InstructionLabel
+@onready var instruction_answer: Label = $Opdracht/InnerBox/InstructionAnswer
+@onready var instruction_title: Label = $Opdracht/InnerBox/InstructionTitle
 
 const RIGHTANSWER_95219_2 = preload("uid://b4hhbu0p2y1e2")#no duh you're importing from files
 const WRONGANSWER_37702 = preload("uid://dbeep1x6e8pca")
@@ -34,6 +36,11 @@ func _ready():
 
 	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 	hint.visible = false
+	#
+	#instruction_label.text = tr("")
+	#instruction_title.text = tr("")
+	#instruction_answer.text = tr("")
+	
 	
 	
 func _process(_delta):
@@ -63,8 +70,6 @@ func _on_hide_opdracht_pressed() -> void:
 func _on_dialogue_ended(dialogue):
 	if dialogue == ending:
 		get_tree().change_scene_to_file("res://scenes/room2.tscn")
-	
-
 
 func _on_ventilation_pressed() -> void:
 	DialogueManager.show_dialogue_balloon(ventilation, "start")

@@ -100,7 +100,15 @@ position = Vector2(4, -3)
 [node name="Instructions" type="Node2D" parent="."]
 visible = false
 
+[node name="ColorRect" type="ColorRect" parent="Instructions"]
+offset_left = 163.0
+offset_top = 50.0
+offset_right = 1027.0
+offset_bottom = 261.0
+color = Color(0.7254902, 0.7254902, 0.7254902, 1)
+
 [node name="Q11" type="Sprite2D" parent="Instructions"]
+visible = false
 position = Vector2(596, 156)
 scale = Vector2(0.6869806, 0.57422924)
 texture = ExtResource("5_17neo")
@@ -110,6 +118,20 @@ offset_left = 949.0
 offset_top = 63.0
 offset_right = 1011.0
 offset_bottom = 111.0
+text = "x"
+
+[node name="Label" type="Label" parent="Instructions"]
+offset_left = 273.0
+offset_top = 56.0
+offset_right = 913.0
+offset_bottom = 263.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Q10-regel
+
+Bij een temperatuurverschil van 10°C neemt het aantal actieve eenheden met een bepaalde verhouding toe. In dit geval verdubbelt het aantal actieve eenheden bij een toename van 10°C."
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Audio" type="Node2D" parent="."]
 

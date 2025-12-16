@@ -6,8 +6,10 @@ var start_time = 0
 var dialogue_res = preload("res://dialogue/dialogueroom4.dialogue")
 @onready var rightanswer_952192: AudioStreamPlayer = $Audio/Rightanswer952192
 @onready var wronganswer_37702: AudioStreamPlayer = $Audio/Wronganswer37702
+@onready var instructions: Node2D = $Instructions
 
 func _ready():
+	instructions.visible = false
 	Events.current_room = 4
 	start_time = Time.get_ticks_msec()
 	#FORCING pointing hand not in this scene!!
@@ -53,5 +55,10 @@ func _on_getal_pressed(number, button):
 		get_tree().change_scene_to_file("res://scenes/room51.tscn")
 
 
-func _on_wrong_area_gui_input(event: InputEvent) -> void:
-	pass # Replace with function body.
+
+func _on_hideq_10_pressed() -> void:
+	instructions.visible = false
+
+
+func _on_show_instructions_pressed() -> void:
+	instructions.visible = true

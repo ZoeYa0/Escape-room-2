@@ -11,11 +11,11 @@ extends Control
 @onready var informatie_51: Sprite2D = $Instructions/informatie51
 @onready var informatie_52: Sprite2D = $Instructions/informatie52
 @onready var hide_instructions: Button = $Instructions/HideInstructions
-@onready var lasers: AudioStreamPlayer = $Lasers
 @onready var antwoord_52: LineEdit = $antwoord52
 
 @onready var rightanswer_952192: AudioStreamPlayer = $Audio/Rightanswer952192
 @onready var wronganswer_37702: AudioStreamPlayer = $Audio/Wronganswer37702
+@onready var lasers: AudioStreamPlayer = $Audio/Lasers
 
 var start_time = 0
 func _ready():
@@ -45,6 +45,8 @@ var code_2 := ["0312"]
 func _on_antwoord_51_text_submitted(password: String) -> void:
 	if password not in code_1:
 		$antwoord51.clear()
+		Events.rooms["room5"]["wrong"] += 1
+		wronganswer_37702.play()
 		return
 	else:
 		lasers.play(2.3)

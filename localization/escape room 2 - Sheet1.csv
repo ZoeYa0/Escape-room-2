@@ -1,23 +1,23 @@
-key,nl
-HINTS_1.1,85 kg*100mg/kg = 850 mg
-HINTS_1.2,"850 mg / 300 m^3 = 2,83 mg/m^3"
-HINTS_2.1,"Aha, toch te ingewikkeld? Jullie moeten eerst het volume van de lucht berekenen die op de sensor drukt (h × b × l), voor het geval jullie de formule even kwijt waren. Vervolgens gebruiken jullie de dichtheid en het gevonden volume om de massa van de lucht te bepalen. Als laatste vullen jullie die massa in de functieformule in om de y-waarde te vinden — dat is de spanning. "
-HINTS_2.2,"De vier draadjes moeten de drukshakelaar, En-poort, comparator en zoemer verbinden. Hoe? Zoek maar zelf uit. "
-HINTS_2.3,uitwerking:
-HINTS_3.1,80 eenheden bij 40 graden Celcius
-HINTS_3.2,Verschil 30 graden Celcius en 40 graden Celcius= 40 eeheden
-HINTS_3.3,"40 eenheden (van 30 graden Celius) + 0,7*40=68 (afgerond 70)"
-HINTS_4.1,"De tegels waar je op mag staan, zijn de tegels waarvan het getal op de tegel een vermenigvuldiging is van 3 met een ander getal. De kleuren van de tegels zijn willekeurig."
-HINTS_4.2,"Voorbeeld van een goede tegel is: 15, want 3*5"
-HINTS_5.1,Je moet goed kijken naar de temperaturen en de eigenschappen van de genoemde eiwitten.
-HINTS_5.2,"Antwoord van een actief eiwit: B, want wordt beschermd bij extreme hitte en bij vriespunten. Dus eerste deel code is 37."
-HINTS_5.3,377459
-HINTS_5.4,Veel stress is een belangrijk detail. Ook hier moet je goed kijken naar de gekregen informatie over de chemische en biologische analyse en dit dan goed zien te koppelen aan de juiste vingerafdrukken.
-HINTS_5.5,Afdruk C bevat veel stresszweet
-HINTS_5.6,index is dus 03 en soms extra detail 12 dus de code is 0312
-UI_SCORE,Tijd: {time} | Fouten: {wrong} | Hints: {hints}
-UI_TOT_SCORE,Totale statistieken:\n\nTotale tijd: %d \nTotaal aantal verkeerde pogingen: %d \nTotaal aantal hints: %d
-OPDRACHT_1,Bereken de concentratie van Aetherol in de lucht die er nodig is om de Bloedtak tijdelijk uit te schakelen
-OPDRACHT_2,De gasten van de Bloedtak liggen nu nog te slapen in die kamer… maar niemand weet hoelang het slaapmiddel blijft werken. Dus jullie moeten meteen een alarm in elkaar zetten zodat we het merken zodra er iemand begint te bewegen. Schiet op — voordat ze wakker worden.
-OPDRACHT_3,Q10-regel \n Bij een temperatuurverschil van 10°C neemt het aantal actieve eenheden met een bepaalde verhouding toe. In dit geval verdubbelt het het aantal actieve eenheden bij een verhoging van 10°C.
-OPDRACHT_4,De Bloedtak is gek op het getal 3 en vermenigvuldigen.
+key,nl,en
+HINTS_1.1,85 kg*100mg/kg = 850 mg,85 kg * 100 mg/kg = 850 mg
+HINTS_1.2,"85 kg*100mg/kg = 850 mg\n850 mg / 300 m^3 = 2,83 mg/m^3","85 kg*100mg/kg = 850 mg\n850 mg / 300 m^3 = 2,83 mg/m^3"
+HINTS_2.1,"Aha, toch te ingewikkeld? Jullie moeten eerst het volume van de lucht berekenen die op de sensor drukt (h × b × l), voor het geval jullie de formule even kwijt waren. Vervolgens gebruiken jullie de dichtheid en het gevonden volume om de massa van de lucht te bepalen. Als laatste vullen jullie die massa in de functieformule in om de y-waarde te vinden — dat is de spanning. ","Ah, still too complicated? You first need to calculate the volume of the air pressing on the sensor (h × w × l), in case you forgot the formula. Then you use the density and the calculated volume to determine the mass of the air. Finally, you substitute that mass into the function formula to find the y-value — that is the voltage."
+HINTS_2.2,"De vier draadjes moeten de drukshakelaar, En-poort, comparator en zoemer verbinden. Hoe? Zoek maar zelf uit. ","The four wires must connect the pressure switch, AND gate, comparator, and buzzer. How? Figure it out yourselves."
+HINTS_2.3,uitwerking:,solution:
+HINTS_3.1,80 eenheden bij 40 graden Celcius,80 units at 40 degrees Celsius
+HINTS_3.2,Verschil 30 graden Celcius en 40 graden Celcius= 40 eeheden,Difference between 30 degrees Celsius and 40 degrees Celsius = 40 units
+HINTS_3.3,"40 eenheden (van 30 graden Celius) + 0,7*40=68 (afgerond 70)",40 units (from 30 degrees Celsius) + 0.7 * 40 = 68 (rounded to 70)
+HINTS_4.1,"De tegels waar je op mag staan, zijn de tegels waarvan het getal op de tegel een vermenigvuldiging is van 3 met een ander getal. De kleuren van de tegels zijn willekeurig.",The tiles you are allowed to stand on are the tiles whose number is a multiple of 3 times another number. The colors of the tiles are random.
+HINTS_4.2,"Voorbeeld van een goede tegel is: 15, want 3*5","An example of a correct tile is 15, because 3 × 5"
+HINTS_5.1,Je moet goed kijken naar de temperaturen en de eigenschappen van de genoemde eiwitten.,You need to carefully look at the temperatures and the properties of the mentioned proteins.
+HINTS_5.2,"Antwoord van een actief eiwit: B, want wordt beschermd bij extreme hitte en bij vriespunten. Dus eerste deel code is 37.","Answer for an active protein: B, because it is protected at extreme heat and at freezing points. So the first part of the code is 37."
+HINTS_5.3,377459,377459
+HINTS_5.4,Veel stress is een belangrijk detail. Ook hier moet je goed kijken naar de gekregen informatie over de chemische en biologische analyse en dit dan goed zien te koppelen aan de juiste vingerafdrukken.,"A lot of stress is an important detail. Here too, you must carefully examine the given information from the chemical and biological analysis and correctly link it to the right fingerprints."
+HINTS_5.5,Afdruk C bevat veel stresszweet,Fingerprint C contains a lot of stress sweat
+HINTS_5.6,index is dus 03 en soms extra detail 12 dus de code is 0312,"So the index is 03 and sometimes an extra detail 12, so the code is 0312"
+UI_SCORE,Tijd: {time} | Fouten: {wrong} | Hints: {hints},Time: {time} | Errors: {wrong} | Hints: {hints}
+UI_TOT_SCORE,Totale statistieken:\n\nTotale tijd: %d \nTotaal aantal verkeerde pogingen: %d \nTotaal aantal hints: %d,Total statistics:\n\nTotal time: %d\nTotal number of incorrect attempts:%d\nTotal number of hints: %d
+OPDRACHT_1,Bereken de concentratie van Aetherol in de lucht die er nodig is om de Bloedtak tijdelijk uit te schakelen,Calculate the concentration of Aetherol in the air needed to temporarily disable the Bloedtak
+OPDRACHT_2,De gasten van de Bloedtak liggen nu nog te slapen in die kamer… maar niemand weet hoelang het slaapmiddel blijft werken. Dus jullie moeten meteen een alarm in elkaar zetten zodat we het merken zodra er iemand begint te bewegen. Schiet op — voordat ze wakker worden.,The members of the Bloedtak are still sleeping in that room… but nobody knows how long the sleeping agent will last. So you must immediately assemble an alarm so we notice as soon as someone starts moving. Hurry — before they wake up.
+OPDRACHT_3,Q10-regel \n Bij een temperatuurverschil van 10°C neemt het aantal actieve eenheden met een bepaalde verhouding toe. In dit geval verdubbelt het het aantal actieve eenheden bij een verhoging van 10°C.,"Q10 rule: \n With a temperature difference of 10°C, the number of active units increases by a certain ratio. In this case, the number of active units doubles with a 10°C increase."
+OPDRACHT_4,De Bloedtak is gek op het getal 3 en vermenigvuldigen.,The Bloedtak is obsessed with the number 3 and multiplication.

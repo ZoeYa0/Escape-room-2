@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://7ivaxx0cbx40"]
+[gd_scene load_steps=32 format=3 uid="uid://7ivaxx0cbx40"]
 
 [ext_resource type="Script" uid="uid://whw2je2lx36x" path="res://scripts/room2.gd" id="1_d3uvb"]
 [ext_resource type="Texture2D" uid="uid://dk3cnf7ar3htb" path="res://images/achtergrond2.png" id="1_klc7l"]
@@ -42,6 +42,10 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Theme" id="Theme_yfplu"]
 Panel/styles/panel = SubResource("StyleBoxFlat_7xh3p")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwq2r"]
+atlas = ExtResource("6_duage")
+region = Rect2(152.62396, 0, 1034.9036, 760.2895)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7xmq"]
 bg_color = Color(0.95980245, 0.83104914, 0.8036309, 1)
@@ -176,9 +180,9 @@ De rest moeten jullie zelf uitvogelen… "
 autowrap_mode = 2
 
 [node name="2System" type="Sprite2D" parent="System/ColorRect"]
-position = Vector2(652, 286)
-scale = Vector2(0.7612967, 0.7612967)
-texture = ExtResource("6_duage")
+position = Vector2(650.7971, 337.1768)
+scale = Vector2(0.63482183, 0.64164)
+texture = SubResource("AtlasTexture_dwq2r")
 
 [node name="HideSystem" type="Button" parent="System" groups=["Buttons"]]
 layout_mode = 0

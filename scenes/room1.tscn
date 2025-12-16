@@ -79,7 +79,7 @@ offset_bottom = 602.0
 grow_horizontal = 2
 theme = SubResource("Theme_nrmkl")
 
-[node name="Label" type="Label" parent="Opdracht/InnerBox"]
+[node name="InstructionLabel" type="Label" parent="Opdracht/InnerBox"]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 85.0
@@ -92,7 +92,7 @@ text = "Met een bepaald gas kan de Bloedtak buiten bewustzijn raken voor een tij
 Gebruik de tabel hiernaast."
 autowrap_mode = 2
 
-[node name="Title" type="Label" parent="Opdracht/InnerBox"]
+[node name="InstructionTitle" type="Label" parent="Opdracht/InnerBox"]
 layout_mode = 0
 offset_left = 442.0
 offset_top = 29.0
@@ -108,7 +108,7 @@ offset_top = 508.0
 offset_right = 781.0
 offset_bottom = 564.0
 
-[node name="Antwoord" type="Label" parent="Opdracht/InnerBox"]
+[node name="InstructionAnswer" type="Label" parent="Opdracht/InnerBox"]
 layout_mode = 0
 offset_left = 230.0
 offset_top = 475.0

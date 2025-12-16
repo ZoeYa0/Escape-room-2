@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ol4746xbjja4"]
+[gd_scene load_steps=8 format=3 uid="uid://ol4746xbjja4"]
 
 [ext_resource type="Script" uid="uid://byremsrip5wtw" path="res://scripts/room6.gd" id="1_qv633"]
 [ext_resource type="Texture2D" uid="uid://wx3bsq5v6uu1" path="res://images/1.png" id="2_ihqqe"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dk3cnf7ar3htb" path="res://images/achtergrond2.png" id="4_61fb2"]
 [ext_resource type="Texture2D" uid="uid://bph3aum82om02" path="res://images/achtergrond4.png" id="5_dnee6"]
 [ext_resource type="Texture2D" uid="uid://bquqgsei7vgig" path="res://images/achtergrond51.png" id="6_uaxdy"]
+[ext_resource type="VideoStream" uid="uid://dam6ybdkf27u3" path="res://images/video3.ogv" id="7_ppcy5"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -90,3 +91,11 @@ texture = ExtResource("5_dnee6")
 position = Vector2(576.99994, 452.00003)
 scale = Vector2(0.36833856, 0.35555553)
 texture = ExtResource("6_uaxdy")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 649.0
+stream = ExtResource("7_ppcy5")
+autoplay = true
+expand = true
