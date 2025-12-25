@@ -1,0 +1,183 @@
+# LANGUAGE translation for escaperoom level 2 for the following files:
+# res://dialogue/1_ending.dialogue
+# res://dialogue/2_ending.dialogue
+# res://dialogue/2_no_power.dialogue
+# res://dialogue/1_ventilation.dialogue
+# res://dialogue/1_start.dialogue
+# res://dialogue/3_start.dialogue
+# res://dialogue/4_start.dialogue
+# res://dialogue/2_start.dialogue
+# res://dialogue/5.1_start.dialogue
+# res://dialogue/5.0_start.dialogue
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: escaperoom level 2\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#. TRANSLATORS: Character name
+#: dialogue/1_ending.dialogue
+#: dialogue/2_no_power.dialogue
+#: dialogue/1_ventilation.dialogue
+#: dialogue/1_start.dialogue
+#: dialogue/3_start.dialogue
+#: dialogue/4_start.dialogue
+#: dialogue/2_start.dialogue
+#: dialogue/5.1_start.dialogue
+#: dialogue/5.0_start.dialogue
+msgctxt "dialogue"
+msgid ""
+msgstr ""
+
+#: dialogue/1_ending.dialogue
+msgid "*laat het gas binnenin ontsnappen via de ventilator*"
+msgstr ""
+
+#: dialogue/1_ending.dialogue
+msgid "Oké, nu ze allemaal slapen, laten we naar binnen gaan!"
+msgstr ""
+
+#: dialogue/2_ending.dialogue
+msgid ":Geweldig! Nu kunnen we Kamilla gaan opzoeken."
+msgstr ""
+
+#: dialogue/2_ending.dialogue
+msgid ":Als we de beveiligingscontrole kamer kunnen vinden zouden we de coordinaten van Kamilla kunnen krijgen."
+msgstr ""
+
+#: dialogue/2_no_power.dialogue
+msgid "Er is geen stroom."
+msgstr ""
+
+#: dialogue/1_ventilation.dialogue
+msgid "Dit is de ventilatie."
+msgstr ""
+
+#: dialogue/1_start.dialogue
+msgid "Jullie hebben nu de duistere organisatie: ''De Bloedtak'' gelokaliseerd."
+msgstr ""
+
+#: dialogue/1_start.dialogue
+msgid "Jullie weten dat professor Kamilla Anderson ook binnen in dit gebouw zit. Maar hoe kunnen jullie onopgemerkt de professor bevrijden zonder dat De Bloedtak jullie vindt?"
+msgstr ""
+
+#: dialogue/1_start.dialogue
+msgid "Met een bepaald gas valt De Bloedtak voor een tijdje in slaap. Dit is het fictieve gas: Aetherol."
+msgstr ""
+
+#: dialogue/1_start.dialogue
+msgid "Jullie moeten dit gas via de gasleiding in de juiste hoeveelheid zien binnen te brengen in de ruimte waar de Bloedtak zit."
+msgstr ""
+
+#: dialogue/1_start.dialogue
+msgid "Kunnen jullie uitvinden welke concentratie Aetherol er in de lucht moet zitten?"
+msgstr ""
+
+#: dialogue/3_start.dialogue
+msgid "Nu jullie er ook voor gezorgd hebben dat de Bloedtak veilig achter slot en grendel zit, kunnen jullie eindelijk beginnen met het vinden van professor Kamilla Anderson."
+msgstr ""
+
+#: dialogue/3_start.dialogue
+msgid "Maar om haar te vinden, moeten jullie wel weten waar ze gevangen gehouden wordt."
+msgstr ""
+
+#: dialogue/3_start.dialogue
+msgid "Jullie moeten de puzzel oplossen om er achter te komen in welke kamer Kamilla gevangen wordt gehouden."
+msgstr ""
+
+#: dialogue/4_start.dialogue
+msgid "Mooi! Jullie zijn er achter gekomen in welke kamer Kamilla Anderson wordt vastgehouden."
+msgstr ""
+
+#: dialogue/4_start.dialogue
+msgid "Het enige wat jullie nu nog moeten doen is naar de kamer toe gaan waar de professor wordt vastgehouden."
+msgstr ""
+
+#: dialogue/4_start.dialogue
+msgid "Appeltje-eitje zou je zeggen. Of toch niet?…"
+msgstr ""
+
+#: dialogue/4_start.dialogue
+msgid "Onderweg naar de kamer worden jullie gehinderd door een boobytrap."
+msgstr ""
+
+#: dialogue/4_start.dialogue
+msgid "Om veilig de boobytrap te passeren moeten jullie een raadsel oplossen en op de goede tegels staan."
+msgstr ""
+
+#: dialogue/4_start.dialogue
+msgid "Het raadsel gaat als volgt:"
+msgstr ""
+
+#: dialogue/4_start.dialogue
+msgid "De Bloedtak is gek op het getal 3 en vermenigvuldigingen. Weten jullie welke tegels de juiste zijn? Succes!"
+msgstr ""
+
+#: dialogue/2_start.dialogue
+msgid "Goed gedaan!"
+msgstr ""
+
+#: dialogue/2_start.dialogue
+msgid "Oké, luister goed."
+msgstr ""
+
+#: dialogue/2_start.dialogue
+msgid "De gasten van De Bloedtak liggen nu nog te slapen in hun kamer..."
+msgstr ""
+
+#: dialogue/2_start.dialogue
+msgid "Maar niemand weet hoe lang het slaapmiddel blijft werken. Dus jullie moeten meteen een alarm in elkaar zetten zodat we het merken als iemand begint te bewegen."
+msgstr ""
+
+#: dialogue/2_start.dialogue
+msgid "Schiet op - voordat ze wakker worden."
+msgstr ""
+
+#: dialogue/5.1_start.dialogue
+msgid "Jullie hebben succesvol de actieve lasers uitgeschakeld. Goed bezig!"
+msgstr ""
+
+#: dialogue/5.1_start.dialogue
+msgid "Jullie kunnen bijna de professor bevrijden en de wereld redden."
+msgstr ""
+
+#: dialogue/5.1_start.dialogue
+msgid "Maar er is nog een taak die jullie moeten uitvoeren en dat is de code zien te ontrafelen voor het beveiligingsslot op de deur."
+msgstr ""
+
+#: dialogue/5.1_start.dialogue
+msgid "Als jullie die hebben gevonden, kunnen jullie de deur openen en de professor bevrijden. Succes!"
+msgstr ""
+
+#: dialogue/5.0_start.dialogue
+msgid "Pff, die boobytrap hebben jullie mooi zien te ontwijken. Klasse!"
+msgstr ""
+
+#: dialogue/5.0_start.dialogue
+msgid "Dan kunnen jullie nu echt de professor bevrijden."
+msgstr ""
+
+#: dialogue/5.0_start.dialogue
+msgid "Jullie lopen door de gangen en komen aan voor de kamer waar de professor in vastgehouden wordt."
+msgstr ""
+
+#: dialogue/5.0_start.dialogue
+msgid "Maar dat is niet het enige."
+msgstr ""
+
+#: dialogue/5.0_start.dialogue
+msgid "Voor de deur zijn een aantal laserstralen. Die moeten jullie eerst zien uit te schakelen."
+msgstr ""
+
+#: dialogue/5.0_start.dialogue
+msgid "Daarna moeten jullie de code zien te ontrafelen om dan eindelijk de deur naar de professor open te krijgen."
+msgstr ""
+
+#: dialogue/5.0_start.dialogue
+msgid "Veel succes!"
+msgstr ""

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://davebhs2q7lsw"]
+[gd_scene load_steps=12 format=3 uid="uid://davebhs2q7lsw"]
 
 [ext_resource type="Script" uid="uid://1b5ckkgqyo8b" path="res://scripts/room1.gd" id="1_277jj"]
 [ext_resource type="Resource" uid="uid://u3hvcec6gbve" path="res://dialogue/1_ending.dialogue" id="2_21e2k"]
@@ -18,6 +18,8 @@ bg_color = Color(0.7254902, 0.7254902, 0.7254902, 1)
 
 [sub_resource type="Theme" id="Theme_nrmkl"]
 Panel/styles/panel = SubResource("StyleBoxFlat_21e2k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_21e2k"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_277jj")
@@ -94,12 +96,13 @@ autowrap_mode = 2
 
 [node name="InstructionTitle" type="Label" parent="Opdracht/InnerBox"]
 layout_mode = 0
-offset_left = 442.0
-offset_top = 29.0
-offset_right = 552.0
-offset_bottom = 63.0
+offset_left = 448.0
+offset_top = 36.0
+offset_right = 558.0
+offset_bottom = 70.0
 theme_override_font_sizes/font_size = 24
 text = "Opdracht"
+horizontal_alignment = 1
 
 [node name="LineEdit" type="LineEdit" parent="Opdracht/InnerBox"]
 layout_mode = 0
@@ -114,7 +117,7 @@ offset_left = 230.0
 offset_top = 475.0
 offset_right = 387.0
 offset_bottom = 498.0
-text = "Voer je antwoord in mg/m^3:"
+text = "Voer je antwoord in 2 decimalen in mg/m^3:"
 
 [node name="HideOpdracht" type="Button" parent="Opdracht"]
 layout_mode = 0
@@ -129,6 +132,14 @@ position = Vector2(751, 393)
 texture = ExtResource("6_21e2k")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="en" type="Label" parent="."]
+offset_left = 806.0
+offset_top = 452.0
+offset_right = 904.0
+offset_bottom = 477.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_21e2k")
+text = "Instructions"
 
 [connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="ShowOpdracht" to="." method="_on_show_opdracht_pressed"]

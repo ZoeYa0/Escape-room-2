@@ -9,11 +9,11 @@ var total_wrong := 0
 var total_hints := 0
 
 func _ready() -> void:
-	
-	AudioServer.set_bus_mute(1, true)
-	await  get_tree().create_timer(24).timeout
-	video_stream_player.visible = false
-	AudioServer.set_bus_mute(1, false)
+	title.text = tr("UI_TITLE")
+	#AudioServer.set_bus_mute(1, true)
+	#await  get_tree().create_timer(24).timeout
+	#video_stream_player.visible = false
+	#AudioServer.set_bus_mute(1, false)
 	for room_name in Events.rooms:
 		var stats = Events.rooms[room_name]
 
@@ -51,3 +51,7 @@ func _process(delta: float) -> void:
 		hue += 0.001
 	else:
 		hue = 0.0
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/room22.tscn")

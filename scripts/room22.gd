@@ -15,7 +15,8 @@ extends Control
 var start_time = 0
 
 func _ready():
-	
+	$Thx.visible = false
+
 	Events.current_room = 2
 	start_time = Time.get_ticks_msec()
 	#FORCING pointing hand
@@ -54,4 +55,8 @@ func _check_conditions():
 	if lampen_sprite.visible \
 	and schakelaargesloten_sprite.visible \
 	and volt_label.visible:
-		get_tree().change_scene_to_file("res://scenes/room3.tscn")
+		$Thx.visible = true
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/room6.tscn")

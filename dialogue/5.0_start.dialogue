@@ -1,0 +1,9 @@
+~ start
+: dialogue/5.0_start_1
+: dialogue/5.0_start_2
+: dialogue/5.0_start_3
+: dialogue/5.0_start_4
+: dialogue/5.0_start_5
+: dialogue/5.0_start_6
+: dialogue/5.0_start_7
+=> END

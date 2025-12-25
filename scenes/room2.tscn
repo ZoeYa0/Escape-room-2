@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://7ivaxx0cbx40"]
+[gd_scene load_steps=33 format=3 uid="uid://7ivaxx0cbx40"]
 
 [ext_resource type="Script" uid="uid://whw2je2lx36x" path="res://scripts/room2.gd" id="1_d3uvb"]
 [ext_resource type="Texture2D" uid="uid://dk3cnf7ar3htb" path="res://images/achtergrond2.png" id="1_klc7l"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://4mmmpcy4jio5" path="res://audio/security-alarm.mp3" id="11_olrvt"]
 [ext_resource type="AudioStream" uid="uid://b4hhbu0p2y1e2" path="res://audio/rightanswer-95219 2.mp3" id="12_dwq2r"]
 [ext_resource type="AudioStream" uid="uid://dbeep1x6e8pca" path="res://audio/wronganswer-37702.mp3" id="13_oibp2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwq2r"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yfplu"]
 
@@ -72,6 +74,15 @@ position = Vector2(573.5, 322.5)
 scale = Vector2(0.5953125, 0.563368)
 texture = ExtResource("1_klc7l")
 
+[node name="en" type="Label" parent="."]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 157.0
+offset_right = 1030.0
+offset_bottom = 182.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_dwq2r")
+text = "Instructions"
+
 [node name="2Dead" type="Sprite2D" parent="."]
 position = Vector2(571, 324)
 scale = Vector2(0.569, 0.5466667)
@@ -117,7 +128,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_dbehi")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_c7xmq")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_olrvt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5wf3f")
-text = "Lees instructie voor alarm hier"
+text = "Instruction"
 
 [node name="Arrow" type="Button" parent="." groups=["Buttons"]]
 layout_mode = 0
@@ -125,11 +136,12 @@ offset_left = 39.0
 offset_top = 258.0
 offset_right = 193.0
 offset_bottom = 344.0
+theme_override_font_sizes/font_size = 32
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_dbehi")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_c7xmq")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_olrvt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5wf3f")
-text = "Volgende kamer "
+text = "<-"
 
 [node name="Alarm" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -165,7 +177,7 @@ offset_right = 1030.0
 offset_bottom = 602.0
 color = Color(0.6577177, 0.9086637, 0.93336076, 1)
 
-[node name="Description" type="Label" parent="System/ColorRect"]
+[node name="SystemDesc" type="Label" parent="System/ColorRect"]
 layout_mode = 0
 offset_left = 51.0
 offset_top = 44.0
@@ -234,10 +246,10 @@ id = "4"
 
 [node name="5" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 524.0
-offset_top = 419.0
-offset_right = 541.0
-offset_bottom = 437.0
+offset_left = 526.0
+offset_top = 469.0
+offset_right = 543.0
+offset_bottom = 487.0
 script = ExtResource("8_2robf")
 id = "5"
 
@@ -333,9 +345,9 @@ id = "6"
 
 [node name="16" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 744.0
+offset_left = 742.0
 offset_top = 158.0
-offset_right = 765.0
+offset_right = 763.0
 offset_bottom = 179.0
 script = ExtResource("8_2robf")
 id = "6"
@@ -387,9 +399,9 @@ id = "6"
 
 [node name="22" type="Button" parent="System/PuzzleController" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 846.0
+offset_left = 845.0
 offset_top = 167.0
-offset_right = 867.0
+offset_right = 866.0
 offset_bottom = 188.0
 script = ExtResource("8_2robf")
 id = "6"
@@ -446,6 +458,13 @@ offset_right = 548.0
 offset_bottom = 346.0
 color = Color(0.827451, 0.827451, 0.827451, 1)
 
+[node name="ColorRect3" type="ColorRect" parent="System/PuzzleController"]
+offset_left = 412.0
+offset_top = 409.0
+offset_right = 552.0
+offset_bottom = 450.0
+color = Color(0.827451, 0.827451, 0.827451, 1)
+
 [node name="InstructionAlarm" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -499,7 +518,7 @@ offset_right = 1012.0
 offset_bottom = 80.0
 text = "x"
 
-[node name="Opdracht2" type="Panel" parent="."]
+[node name="SpanningOpdracht" type="Panel" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 55.0
@@ -509,7 +528,7 @@ offset_bottom = 628.0
 size_flags_vertical = 4
 theme = SubResource("Theme_yfplu")
 
-[node name="InnerBox" type="Panel" parent="Opdracht2"]
+[node name="InnerBox" type="Panel" parent="SpanningOpdracht"]
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
@@ -520,7 +539,7 @@ offset_bottom = 602.0
 grow_horizontal = 2
 theme = SubResource("Theme_dwq2r")
 
-[node name="Description" type="Label" parent="Opdracht2/InnerBox"]
+[node name="Description" type="Label" parent="SpanningOpdracht/InnerBox"]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 85.0
@@ -540,7 +559,7 @@ Functieformule: y= 0,2 * x + 0,5
 Voer je antwoord in V."
 autowrap_mode = 2
 
-[node name="Title" type="Label" parent="Opdracht2/InnerBox"]
+[node name="Title" type="Label" parent="SpanningOpdracht/InnerBox"]
 layout_mode = 0
 offset_left = 442.0
 offset_top = 29.0
@@ -549,7 +568,7 @@ offset_bottom = 63.0
 theme_override_font_sizes/font_size = 24
 text = "Opdracht"
 
-[node name="HideOpdracht" type="Button" parent="Opdracht2" groups=["Buttons"]]
+[node name="HideOpdracht" type="Button" parent="SpanningOpdracht" groups=["Buttons"]]
 layout_mode = 0
 offset_left = 930.0
 offset_top = 30.0
@@ -579,4 +598,4 @@ stream = ExtResource("13_oibp2")
 [connection signal="text_submitted" from="AnswerField" to="." method="_on_answer_field_text_submitted"]
 [connection signal="pressed" from="System/HideSystem" to="." method="_on_hide_system_pressed"]
 [connection signal="pressed" from="InstructionAlarm/HideAlarm" to="." method="_on_hide_alarm_pressed"]
-[connection signal="pressed" from="Opdracht2/HideOpdracht" to="." method="_on_hide_opdracht_pressed"]
+[connection signal="pressed" from="SpanningOpdracht/HideOpdracht" to="." method="_on_hide_opdracht_pressed"]

@@ -29,7 +29,7 @@ func _ready():
 	for node in get_tree().get_nodes_in_group("Buttons"):
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	
-	var dialogue_res = preload("res://dialogue/dialogueroom51.dialogue")
+	var dialogue_res = preload('res://dialogue/5.0_start.dialogue')
 	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 
 	instructions.visible = false
@@ -54,7 +54,7 @@ func _on_antwoord_51_text_submitted(password: String) -> void:
 		bg_2.visible = true
 		antwoord_51.visible = false
 		antwoord_52.visible = true
-		var dialogue_res = preload("res://dialogue/dialogueroom52.dialogue")
+		var dialogue_res = preload("res://dialogue/5.1_start.dialogue")
 		DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 		
 func _on_antwoord_52_text_submitted(password: String) -> void:

@@ -15,7 +15,7 @@ func _ready():
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
 
-	var dialogue_res = preload("res://dialogue/dialogueroom3.dialogue")
+	var dialogue_res = preload("res://dialogue/3_start.dialogue")
 	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 
 	
@@ -37,6 +37,7 @@ func _on_antwoordinvullen_text_submitted(new_text: String) -> void:
 
 func _on_q_10_pressed() -> void:
 	instructions.visible = true
+	$Instructions/Label.text = tr("INSTRUCTION_3.0")
 
 
 func _on_hideq_10_pressed() -> void:

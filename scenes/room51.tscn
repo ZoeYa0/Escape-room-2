@@ -90,17 +90,8 @@ offset_top = 530.0
 offset_right = 695.0
 offset_bottom = 573.0
 
-[node name="TimerLabel" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="Hint" parent="." instance=ExtResource("5_ishgb")]
 visible = false
-
-[node name="Lasers" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_v8yog")
 
 [node name="antwoord52" type="LineEdit" parent="."]
 visible = false

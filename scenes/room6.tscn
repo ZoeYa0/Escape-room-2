@@ -92,6 +92,15 @@ position = Vector2(576.99994, 452.00003)
 scale = Vector2(0.36833856, 0.35555553)
 texture = ExtResource("6_uaxdy")
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 862.0
+offset_top = 540.0
+offset_right = 1129.0
+offset_bottom = 640.0
+text = "Bonus puzzle this way! (it's actually something we scraped at the end, but a fun easter egg if you want more challenge!)"
+autowrap_mode = 2
+
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
 offset_right = 1150.0
@@ -99,3 +108,5 @@ offset_bottom = 649.0
 stream = ExtResource("7_ppcy5")
 autoplay = true
 expand = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

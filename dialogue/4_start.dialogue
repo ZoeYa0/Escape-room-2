@@ -1,0 +1,9 @@
+~ start
+: dialogue/4_start_1
+: dialogue/4_start_2
+: dialogue/4_start_3
+: dialogue/4_start_4
+: dialogue/4_start_5
+: dialogue/4_start_6
+: dialogue/4_start_7
+=> END

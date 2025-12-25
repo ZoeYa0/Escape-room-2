@@ -1,4 +1,4 @@
 ~ start
-:Geweldig! Nu kunnen we Kamilla gaan opzoeken.
-:Als we de beveiligingscontrole kamer kunnen vinden zouden we de coordinaten van Kamilla kunnen krijgen.
+: dialogue/2_ending_1
+: dialogue/2_ending_2
 => END

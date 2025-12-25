@@ -364,7 +364,7 @@ offset_right = 1027.0
 offset_bottom = 261.0
 color = Color(0.7254902, 0.7254902, 0.7254902, 1)
 
-[node name="hideq10" type="Button" parent="Instructions" groups=["Buttons"]]
+[node name="CloseInstructions" type="Button" parent="Instructions" groups=["Buttons"]]
 offset_left = 949.0
 offset_top = 63.0
 offset_right = 1011.0
@@ -397,4 +397,4 @@ autowrap_mode = 2
 [connection signal="pressed" from="getal10" to="." method="_on_getal_10_pressed"]
 [connection signal="pressed" from="getal11" to="." method="_on_getal_11_pressed"]
 [connection signal="pressed" from="getal12" to="." method="_on_getal_12_pressed"]
-[connection signal="pressed" from="Instructions/hideq10" to="." method="_on_hideq_10_pressed"]
+[connection signal="pressed" from="Instructions/CloseInstructions" to="." method="_on_close_instructions_pressed"]

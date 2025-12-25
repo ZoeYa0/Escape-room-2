@@ -1,12 +1,9 @@
 extends Control
 
 @onready var achtergrond_2: Sprite2D = $achtergrond2
-@onready var _2_dead: Sprite2D = $"2Dead"
-@onready var _2_alive: Sprite2D = $"2Alive"
 @onready var show_hint: Button = $ShowHint
 @onready var show_opdracht: Button = $ShowOpdracht
 @onready var hint: Node2D = $Hint
-@onready var opdracht_2: Panel = $Opdracht2
 @onready var inner_box: Panel = $Opdracht2/InnerBox
 @onready var description: Label = $Opdracht2/InnerBox/Description
 @onready var title: Label = $Opdracht2/InnerBox/Title
@@ -23,10 +20,12 @@ extends Control
 @onready var security_alarm: AudioStreamPlayer = $Audio/SecurityAlarm
 @onready var rightanswer_952192: AudioStreamPlayer = $Audio/Rightanswer952192
 @onready var wronganswer_37702: AudioStreamPlayer = $Audio/Wronganswer37702
+@onready var system_desc: Label = $System/ColorRect/SystemDesc
+@onready var spanning_opdracht: Panel = $SpanningOpdracht
 
 var start_time = 0
 var power_on = false
-var dialogue_res = preload("res://dialogue/dialogueroom2.dialogue")
+var dialogue_res = preload("res://dialogue/2_start.dialogue")
 @export var ending: DialogueResource
 @export var no_power: DialogueResource
 
@@ -52,10 +51,14 @@ var codes := ["2.4", "2,4"]
 
 
 func _on_show_opdracht_pressed() -> void:
-	opdracht_2.visible = true
-
+	spanning_opdracht.visible = true
+	$SpanningOpdracht/InnerBox/Description.text = tr("INSTRUCTION_2.1")
+	
+func _on_hide_opdracht_pressed() -> void:
+	spanning_opdracht.visible = false
 
 func _on_answer_field_text_submitted(new_text: String) -> void:
+	#this is for first part!!!
 	if new_text not in codes:
 		answer_field.clear()
 		Events.rooms["room2"]["wrong"] += 1
@@ -67,14 +70,14 @@ func _on_answer_field_text_submitted(new_text: String) -> void:
 		answer_field.add_theme_color_override("font_color", Color.GREEN)#no bg color on textedit
 		answer_field.editable = false
 		security_alarm.play(11.15)
+		Events.room2_part2 = true
 
-func _on_hide_opdracht_pressed() -> void:
-	opdracht_2.visible = false
 
 
 func _on_alarm_pressed() -> void:
 	if power_on:
 		system.visible = true
+		system_desc.text = tr("INSTRUCTION_2.3")
 	else:
 		DialogueManager.show_dialogue_balloon(no_power,'start')
 
@@ -96,6 +99,7 @@ func _on_hide_alarm_pressed() -> void:
 
 func _on_show_alarm_pressed() -> void:
 	instruction_alarm.visible = true
+	$InstructionAlarm/InnerBox/Description.text = tr("INSTRUCTION_2.2")
 
 
 func _on_arrow_pressed() -> void:

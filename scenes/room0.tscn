@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://clnher71bf8xn"]
+[gd_scene load_steps=3 format=3 uid="uid://clnher71bf8xn"]
 
 [ext_resource type="Script" uid="uid://big5rh5ej8jyf" path="res://scripts/room_0.gd" id="1_weto6"]
+[ext_resource type="Texture2D" uid="uid://bf0f2wr6ycon7" path="res://images/0.png" id="2_lf4wg"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_weto6")
+
+[node name="0" type="Sprite2D" parent="."]
+position = Vector2(525, 289)
+scale = Vector2(0.82910156, 0.82910156)
+texture = ExtResource("2_lf4wg")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 43.0
@@ -11,7 +17,7 @@ offset_top = 132.0
 offset_right = 1097.0
 offset_bottom = 287.0
 theme_override_font_sizes/font_size = 40
-text = "Choose your warrior:"
+text = "Choose gameplay language:"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]

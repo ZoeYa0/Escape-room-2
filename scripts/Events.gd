@@ -8,5 +8,5 @@ var rooms = {
 	"room4": {"time": 0, "wrong": 0, "hints": 0},
 	"room5": {"time": 0, "wrong": 0, "hints": 0},
 }
-
+var room2_part2 = false
 var room5_part2 = false

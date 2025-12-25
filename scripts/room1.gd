@@ -6,9 +6,7 @@ extends Node2D
 @onready var opdracht: Panel = $Opdracht
 @onready var inner_box: Panel = $Opdracht/InnerBox
 @onready var label: Label = $Opdracht/InnerBox/Label
-@onready var title: Label = $Opdracht/InnerBox/Title
 @onready var line_edit: LineEdit = $Opdracht/InnerBox/LineEdit
-@onready var antwoord: Label = $Opdracht/InnerBox/Antwoord
 @onready var hide_opdracht: Button = $Opdracht/HideOpdracht
 @onready var instruction_label: Label = $Opdracht/InnerBox/InstructionLabel
 @onready var instruction_answer: Label = $Opdracht/InnerBox/InstructionAnswer
@@ -20,12 +18,11 @@ const WRONGANSWER_37702 = preload("uid://dbeep1x6e8pca")
 
 
 var start_time = 0
-var dialogue_res = preload("res://dialogue/dialogueroom1.dialogue")
+var dialogue_res = preload("res://dialogue/1_start.dialogue")
 @export var ending: DialogueResource
 @export var ventilation: DialogueResource
 
 func _ready():
-	TranslationServer.set_locale("nl")
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	Events.current_room = 1
 	start_time = Time.get_ticks_msec()
@@ -37,9 +34,9 @@ func _ready():
 	DialogueManager.show_dialogue_balloon(dialogue_res, "start")
 	hint.visible = false
 	#
-	#instruction_label.text = tr("")
-	#instruction_title.text = tr("")
-	#instruction_answer.text = tr("")
+	instruction_label.text = tr("INSTRUCTION_1")
+	instruction_title.text = tr("INSTRUCTION")
+	instruction_answer.text = tr("INSTRUCTION_ANSWER_1")
 	
 	
 	

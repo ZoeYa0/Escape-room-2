@@ -16,7 +16,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t107r"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ypfm"]
-load_path = "res://.godot/imported/hint22.png-4d55da4060a438f8bc46fbb77355dc4b.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqc0p"]
 
@@ -29,7 +28,6 @@ load_path = "res://.godot/imported/hint22.png-4d55da4060a438f8bc46fbb77355dc4b.c
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr7gl"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y8i8c"]
-load_path = "res://.godot/imported/grijs.png-097247221cd67fc8ad07c7bdf8302e01.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3db5s"]
 
@@ -159,6 +157,46 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_oeimy")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_rcqru")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g1e18")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 229.0
+offset_right = 339.0
+offset_bottom = 455.0
+text = "search for the 3 mistakes(yeah it's really easy, that's why we scraped it)"
+autowrap_mode = 2
+
+[node name="Thx" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Thx"]
+offset_right = 1133.0
+offset_bottom = 581.0
+color = Color(0.7490196, 0.7490196, 0.7490196, 1)
+
+[node name="Label" type="Label" parent="Thx"]
+offset_left = 238.0
+offset_top = 107.0
+offset_right = 956.0
+offset_bottom = 416.0
+text = "And if you've gotten this far, we just want to say: thank you very much for all the support!
+
+This game was actually made by 4 people(Elize, Anastasiia, Kayra and I). It was meant to be a fun (personally I'm not sure how much of the fun we achieved) little game while testing the players' interdisciplinary skills. If you'd like to show off your score, there's a form link under the desc of the first game where you can submit your results!
+
+The coding itself did take probably >80 hours for both of the devs(Elize and I), but also a lot of hours went into the planning and puzzle design and art (kudos to Anastasiia and Kayra). It was a lot of work but we're really proud!
+
+If you liked it, like the game(bruh) and we'll see ya next time!"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Thx"]
+offset_left = 41.0
+offset_top = 496.0
+offset_right = 235.0
+offset_bottom = 596.0
+text = "Vergeten screenshot te nemen? Klik hier om terug te gaan(click to go back to results)"
+autowrap_mode = 2
+
 [connection signal="pressed" from="lampenverbinden" to="." method="_on_lampenverbinden_pressed"]
 [connection signal="pressed" from="schakelaarsluiten" to="." method="_on_schakelaarsluiten_pressed"]
 [connection signal="pressed" from="atov" to="." method="_on_atov_pressed"]
+[connection signal="pressed" from="Thx/Button" to="." method="_on_button_pressed"]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbjouylrbq1s8"]
+[gd_scene load_steps=17 format=3 uid="uid://cbjouylrbq1s8"]
 
 [ext_resource type="Script" uid="uid://tfsfn33tq7a1" path="res://scripts/room3.gd" id="1_4aq8u"]
 [ext_resource type="Texture2D" uid="uid://c2i5iyjbht7sw" path="res://images/achtergrond3.png" id="1_j3vgb"]
 [ext_resource type="Texture2D" uid="uid://byoj2ogsjgcr3" path="res://images/3.png" id="4_op2f5"]
-[ext_resource type="Texture2D" uid="uid://dc4kxnjt6lmwj" path="res://images/q10.png" id="5_17neo"]
 [ext_resource type="AudioStream" uid="uid://b4hhbu0p2y1e2" path="res://audio/rightanswer-95219 2.mp3" id="6_4x0d7"]
 [ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="6_ggopl"]
 [ext_resource type="AudioStream" uid="uid://dbeep1x6e8pca" path="res://audio/wronganswer-37702.mp3" id="7_bcdn3"]
@@ -106,12 +105,6 @@ offset_top = 50.0
 offset_right = 1027.0
 offset_bottom = 261.0
 color = Color(0.7254902, 0.7254902, 0.7254902, 1)
-
-[node name="Q11" type="Sprite2D" parent="Instructions"]
-visible = false
-position = Vector2(596, 156)
-scale = Vector2(0.6869806, 0.57422924)
-texture = ExtResource("5_17neo")
 
 [node name="hideq10" type="Button" parent="Instructions" groups=["Buttons"]]
 offset_left = 949.0

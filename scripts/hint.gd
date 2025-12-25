@@ -18,7 +18,9 @@ func _on_show_hint_pressed() -> void:
 				2:
 					actual_hint.text = tr("HINTS_1.2")
 		2:
-			if Events.rooms["room2"]["hints"] < 3:
+			if Events.room2_part2 == false and Events.rooms["room2"]["hints"] < 2:
+				Events.rooms["room2"]["hints"] += 1
+			elif Events.room2_part2:
 				Events.rooms["room2"]["hints"] += 1
 			match Events.rooms["room2"]["hints"]:
 				1:
@@ -26,6 +28,8 @@ func _on_show_hint_pressed() -> void:
 				2:
 					actual_hint.text = tr("HINTS_2.2")
 				3:
+					actual_hint.text = tr("HINTS_2.3")
+				4:
 					$"2Answer".visible = true
 		3:
 			Events.rooms["room3"]["hints"] += 1

@@ -1,4 +1,4 @@
 ~ start
-: *laat het gas binnenin ontsnappen via de ventilator*
-: Oké, nu ze allemaal slapen, laten we naar binnen gaan!
+: dialogue/1_ending_1
+: dialogue/1_ending_2
 => END
